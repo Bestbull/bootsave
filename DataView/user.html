@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!--    引入ECharts文件-->
+    <script src="https://cdn.staticfile.org/echarts/5.0.2/echarts.min.js"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>居家救援后台管理</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<style type="text/css">
+</style>
+
+<body>
+    <!--导航栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">居家救援数据监控系统</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">欢迎您 ,</a></li>
+                    <li><a href="#">130706754350</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!--侧边栏-->
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">救援汇总</a></li>
+                    <li><a href="#">救援申请监控</a></li>
+                    <!-- <li><a href="#">订单审核</a></li> -->
+                    <!-- <li><a href="#">民宿信息审核</a></li> -->
+                </ul>
+            </div>
+            <!--用户列表-->
+            <div id="my_bgc" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div id="mysub-header">
+                    <h1 class="sub-header">救援汇总</h1>
+                </div>
+                <div class="table-responsive">
+                    <div class="table table-striped">
+                        <div>
+                            <!-- 左上角 -->
+                            <div id="data1" style="float:left">
+                                <div style="font-size:18px;margin-left:155px; ">走失老人人数与救援成功率</div>
+                                <div id="dataCon1" style="width:500px; height: 400px"></div>
+                            </div>
+                            <!-- 右上角 -->
+                            <div id="data2" style="float:left">
+                                <div style="font-size:18px;margin-left:155px; ">走失老人人数与救援成功率</div>
+                                <div id="dataRight1" style="width:500px; height: 400px"></div>
+                            </div>
+                            <!-- 左下一 -->
+                            <div id="data2" style="float:left">
+                                <div style="font-size:18px;margin-left:155px; ">走失老人年龄趋势</div>
+                                <div id="dataCon2" style="width:500px; height: 400px"></div>
+                            </div>
+                            <!-- 右下1 -->
+                            <div id="data4" style="float:left">
+                                <div style="font-size:18px;margin-left:155px; ">各地区每月走失老人人数与参与救援人数</div>
+                                <div id="dataRight2" style="width:500px; height: 400px"></div>
+                            </div>
+                            <!-- 左下1 -->
+                            <div id="data5" style="float:left;width:500px;margin-left: 20px;">
+                                <div style="font-size:18px;margin-left:155px; ">走失老人信息</div>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>姓名</th>
+                                            <th>走失地区</th>
+                                            <th>走失时间</th>
+                                            <th>详情</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 右下2 -->
+                            <div id="data5" style="float:left;width:500px;margin-left: 20px;">
+                                <div style="font-size:18px;margin-left:155px; ">老人找到时间</div>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>姓名</th>
+                                            <th>找到地区</th>
+                                            <th>找到时间</th>
+                                            <th>详情</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>8 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>9 </td>
+                                            <td>王王网</td>
+                                            <td>XX区XXXXX</td>
+                                            <td>2020.9.3</td>
+                                            <td>
+                                                <button class="add">详情</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- dataCon1 -->
+        <script type="text/javascript">
+        var donCharts1 = document.getElementById('dataCon1');
+        var instence1 = echarts.init(donCharts1);
+        var option1;
+        option1 = {
+            // title:{
+            //     text:'走失老人数与救援成功率'
+            // },
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['月份', '走失人数', '救援成功率'],
+                    ['1月', 43.3, 47.4],
+                    ['2月', 83.1, 47.4],
+                    ['3月', 86.4, 28.6],
+                    ['4月', 72.4, 75.4],
+                    ['5月', 30.4, 85.4],
+                    ['6月', 50.9, 97.2],
+                    ['7月', 90, 45.2],
+                    ['8月', 67.4, 65.3],
+                    ['9月', 87, 67.3],
+                    ['10月', 98, 67.2],
+                    ['11月', 67, 23.5],
+                    ['12月', 49, 85.2]
+                ]
+            },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: { type: 'category' },
+            // 声明一个 Y 轴，数值轴。
+            yAxis: {},
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '走失人数', type: 'bar', encode: { x: 0, y: 1 } },
+                { name: '救援成功率', type: 'line', encode: { x: 0, y: 2 } },
+            ]
+        };
+        option1 && instence1.setOption(option1);
+        </script>
+        <!-- dataCon2 -->
+        <script type="text/javascript">
+        var donCharts2 = document.getElementById('dataCon2');
+        var instence2 = echarts.init(donCharts2);
+        var option2;
+        option2 = {
+            // title:{
+            //     text:'走失老人数与救援成功率'
+            // },
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['年龄', '人数'],
+                    ['80', 43.3],
+                    ['81', 83.1],
+                    ['82', 86.4],
+                    ['83', 72.4],
+                    ['84', 30.4],
+                    ['85', 50.9],
+                    ['86', 90],
+                    ['87', 67.4],
+                    ['89', 87],
+                    ['92', 98],
+                    ['95', 67],
+                    ['96+', 49]
+                ]
+            },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: { type: 'category' },
+            // 声明一个 Y 轴，数值轴。
+            yAxis: {},
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '此年龄走失人数', type: 'line', smooth: true, encode: { x: 0, y: 1 } },
+            ]
+        };
+        option2 && instence2.setOption(option2);
+        </script>
+        <!-- dataRight2 -->
+        <script type="text/javascript">
+        var donChartsR2 = document.getElementById('dataRight2');
+        var instenceR2 = echarts.init(donChartsR2);
+        var optionR2;
+        optionR2 = {
+            // title:{
+            //     text:'走失老人数与救援成功率'
+            // },
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['走失人数', '参加救援人数', '地区', ],
+                    [43.3, 47.4, '西湖区'],
+                    [83.1, 47.4, 'ss区', ],
+                    [86.4, 28.6, 'dong湖区'],
+                    [72.4, 75.4, '拱墅区'],
+                    [30.4, 85.4, '同轴区'],
+                    [50.9, 97.2, '留下区'],
+                ]
+            },
+            grid: { containLabel: true },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: {},
+            // 声明一个 Y 轴，数值轴。
+            yAxis: { type: 'category' },
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '走失人数', type: 'bar', encode: { x: '走失人数', y: '地区' } },
+                { name: '参加救援人数', type: 'bar', encode: { x: '参加救援人数', y: '地区' } },
+            ]
+        };
+        optionR2 && instenceR2.setOption(optionR2);
+        </script>
+</body>
+
+</html>
