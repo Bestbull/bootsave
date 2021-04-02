@@ -8,6 +8,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <!--    引入ECharts文件-->
     <script src="https://cdn.staticfile.org/echarts/5.0.2/echarts.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script> -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -44,13 +45,52 @@
                     <!-- <li><a href="#">民宿信息审核</a></li> -->
                 </ul>
             </div>
-            <!--用户列表-->
+            <!--数据监控-->
             <div id="my_bgc" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div id="mysub-header">
                     <h1 class="sub-header">救援汇总</h1>
                 </div>
                 <div class="table-responsive">
                     <div class="table table-striped">
+                        <!-- 筛选头 -->
+                        <div id="head_bar" style="width:1000px;height: 40px;margin: 20px;">
+                            <div style="float: left;font-size: 16px;padding: 5px;">统计地区</div>
+                            <!-- <div class="dropdown">
+                                <button class="dropbtn">下拉菜单</button>
+                                <div class="dropdown-content">
+                                    <a href="#">杭州市</a>
+                                    <a href="#">上海市</a>
+                                    <a href="#">北京市</a>
+                                </div>
+                            </div> -->
+                            <div style="padding: 5px;float: left;">
+                                <input list="address" id="adds">
+                                <datalist id="address">
+                                        <option value="杭州市">
+                                            <option value="南京市">
+                                            <option value="运城市">
+                                            <option value="太原市">
+                                            <option value="湖州市">
+                                </datalist>
+                            </div>
+                            <div style="float: left;font-size: 16px;padding: 5px;">年份</div>
+                            <div style="padding: 5px; float: left;">
+                                <input list="year" id="yeas">
+                                <datalist id="year">
+                                        <option value="2020">
+                                            <option value="2019">
+                                            <option value="2018">
+                                            <option value="2017">
+                                            <option value="2016">
+                                </datalist>
+                            </div>
+                            <div style="float: left;padding: 5px;">
+                                <button class="add" style="margin-top: -5px;">查询</button>
+                            </div>
+                            <div style="float: left;padding: 5px;">
+                                <button class="add" style="margin-top: -5px;">重置选择</button>
+                            </div>
+                        </div>
                         <div>
                             <!-- 左上角 -->
                             <div id="data1" style="float:left">
@@ -59,8 +99,25 @@
                             </div>
                             <!-- 右上角 -->
                             <div id="data2" style="float:left">
-                                <div style="font-size:18px;margin-left:155px; ">走失老人人数与救援成功率</div>
-                                <div id="dataRight1" style="width:500px; height: 400px"></div>
+                                <div style="font-size:18px;margin-left:195px; ">综合数据</div>
+                                <div id="dataRight1" style="width:500px; height: 400px;float: left;">
+                                    <div style="width:230px;height: 200px;float: left;">
+                                        <div style="font-size:18px;margin-left:55px; ">当年走失老人数</div>
+                                        <div id="DR1" style="width:250px; height: 200px;"></div>
+                                    </div>
+                                    <div style="width:230px;height: 200px;float: left;">
+                                        <div style="font-size:18px;margin-left:30px; ">当年成功救援的老人总数</div>
+                                        <div id="DR2" style="width:250px; height: 200px;"></div>
+                                    </div>
+                                    <div style="width:230px;height: 200px;float: left;">
+                                        <div style="font-size:18px;margin-left:55px; ">当年参与救援的人数</div>
+                                        <div id="DR3" style="width:250px; height: 200px;"></div>
+                                    </div>
+                                    <div style="width:230px;height: 200px;float: left;">
+                                        <div style="font-size:18px;margin-left:30px; ">当年走失老人的平均年龄</div>
+                                        <div id="DR4" style="width:250px; height: 200px;"></div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- 左下一 -->
                             <div id="data2" style="float:left">
@@ -69,7 +126,17 @@
                             </div>
                             <!-- 右下1 -->
                             <div id="data4" style="float:left">
-                                <div style="font-size:18px;margin-left:155px; ">各地区每月走失老人人数与参与救援人数</div>
+                                <div style="font-size:18px;margin-left:155px;">各地区每月走失老人人数与参与救援人数</div>
+                                <div style="padding: 5px;margin-left: 430px;">
+                                    <input list="month" id="mons" style="width:70px;">
+                                    <datalist id="month">
+                                            <option value="1月">
+                                                <option value="2月">
+                                                <option value="3月">
+                                                <option value="4月">
+                                                <option value="5月">
+                                    </datalist>
+                                </div>
                                 <div id="dataRight2" style="width:500px; height: 400px"></div>
                             </div>
                             <!-- 左下1 -->
@@ -179,7 +246,6 @@
                                     </tbody>
                                 </table>
                             </div>
-
                             <!-- 右下2 -->
                             <div id="data5" style="float:left;width:500px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">老人找到时间</div>
@@ -419,6 +485,185 @@
             ]
         };
         optionR2 && instenceR2.setOption(optionR2);
+        </script>
+        <!-- DR1 -->
+        <script type="text/javascript">
+        var donChartsDR1 = document.getElementById('DR1');
+        var instanceDR1 = echarts.init(donChartsDR1);
+        var optionDR1;
+        optionDR1 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '1048' },
+
+                ]
+            }]
+        };
+        optionDR1 && instanceDR1.setOption(optionDR1);
+        </script>
+        <!-- DR2 -->
+        <script type="text/javascript">
+        var donChartsDR2 = document.getElementById('DR2');
+        var instanceDR2 = echarts.init(donChartsDR2);
+        var optionDR2;
+        optionDR2 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '1048' },
+
+                ],
+                itemStyle: {
+                    normal: {
+                        color: '#39F9A6',
+                    }
+                }
+            }]
+        };
+        optionDR2 && instanceDR2.setOption(optionDR2);
+        </script>
+        <!-- DR3 -->
+        <script type="text/javascript">
+        var donChartsDR3 = document.getElementById('DR3');
+        var instanceDR3 = echarts.init(donChartsDR3);
+        var optionDR3;
+        optionDR3 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '1048' },
+
+                ],
+                itemStyle: {
+                    normal: {
+                        color: '#3AB2FA',
+                    }
+                }
+            }]
+        };
+        optionDR3 && instanceDR3.setOption(optionDR3);
+        </script>
+        <!-- DR4 -->
+        <script type="text/javascript">
+        var donChartsDR4 = document.getElementById('DR4');
+        var instanceDR4 = echarts.init(donChartsDR4);
+        var optionDR4;
+        optionDR4 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 82, name: '82' },
+
+                ],
+                itemStyle: {
+                    normal: {
+                        color: '#F26363',
+                    }
+                }
+            }]
+        };
+        optionDR4 && instanceDR4.setOption(optionDR4);
         </script>
 </body>
 
