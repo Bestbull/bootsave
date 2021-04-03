@@ -8,7 +8,10 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <!--    引入ECharts文件-->
     <script src="https://cdn.staticfile.org/echarts/5.0.2/echarts.min.js"></script>
-    <!-- <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script> -->
+    <!-- 引入Jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <!-- 引入art-template.js -->
+    <script src="art-template.js" type="text/javascript" charset="utf-8"></script>
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -142,8 +145,9 @@
                             <!-- 左下1 -->
                             <div id="data5" style="float:left;width:500px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">走失老人信息</div>
-                                <table class="table table-striped">
-                                    <thead>
+                                <!-- 渲染模板的位置 -->
+                                <table class="table table-striped" id="old_1">
+                                    <!-- <thead>
                                         <tr>
                                             <th>序号</th>
                                             <th>姓名</th>
@@ -243,8 +247,31 @@
                                                 <button class="add">详情</button>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    </tbody> -->
                                 </table>
+                                <!-- 渲染模板 -->
+                                <script type="text/html" id="oldmbox1">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>姓名</th>
+                                            <th>走失地区</th>
+                                            <th>走失时间</th>
+                                            <th>详情</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{ each aa }}
+                                    <tr>
+                                        <td>{{ $value.id }}</td>
+                                        <td>{{ $value.name }}</td>
+                                        <td>{{ $value.lose_address }}</td>
+                                        <td>{{ $value.lose_time }}</td>
+                                        <td><button class="add">详情</button></td>
+                                    </tr>
+                                    {{ /each }}
+                                    </tbody>
+                                </script>
                             </div>
                             <!-- 右下2 -->
                             <div id="data5" style="float:left;width:500px;margin-left: 20px;">
@@ -664,6 +691,28 @@
             }]
         };
         optionDR4 && instanceDR4.setOption(optionDR4);
+        </script>
+        <!-- 渲染数据 -->
+        <script type="text/javascript">
+        var datas = {
+            "aa": [],
+        }
+        //请求后台数据
+        $.ajax({
+            type: 'get',
+            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman_short',
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                datas.aa = JSON.parse(JSON.stringify(data))
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("报错");
+            }
+        })
+        console.log(datas)
+        var html = template('oldmbox1', datas);
+        document.getElementById('old_1').innerHTML = html;
         </script>
 </body>
 
