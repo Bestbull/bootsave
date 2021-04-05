@@ -1,0 +1,382 @@
+        option1 = {
+            // title:{
+            //     text:'走失老人数与救援成功率'
+            // },
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['月份', '走失人数', '救援成功率'],
+                    ['1月', 43.3, 47.4],
+                    ['2月', 83.1, 47.4],
+                    ['3月', 86.4, 28.6],
+                    ['4月', 72.4, 75.4],
+                    ['5月', 30.4, 85.4],
+                    ['6月', 50.9, 97.2],
+                    ['7月', 90, 45.2],
+                    ['8月', 67.4, 65.3],
+                    ['9月', 87, 67.3],
+                    ['10月', 98, 67.2],
+                    ['11月', 67, 23.5],
+                    ['12月', 49, 85.2]
+                ]
+            },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: { type: 'category' },
+            // 声明一个 Y 轴，数值轴。
+            yAxis: {},
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '走失人数', type: 'bar', encode: { x: 0, y: 1 } },
+                { name: '救援成功率', type: 'line', encode: { x: 0, y: 2 } },
+            ]
+        };
+
+
+
+option2 = {
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['年龄', '人数'],
+                    ['80', 43.3],
+                    ['81', 83.1],
+                    ['82', 86.4],
+                    ['83', 72.4],
+                    ['84', 30.4],
+                    ['85', 50.9],
+                    ['86', 90],
+                    ['87', 67.4],
+                    ['89', 87],
+                    ['92', 98],
+                    ['95', 67],
+                    ['96+', 49]
+                ]
+            },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: { type: 'category' },
+            // 声明一个 Y 轴，数值轴。
+            yAxis: {},
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '此年龄走失人数', type: 'line', smooth: true, encode: { x: 0, y: 1 } },
+            ]
+        };
+
+
+
+
+
+
+optionR2 = {
+            legend: {},
+            tooltip: {},
+
+            dataset: {
+                // 提供一份数据。
+                source: [
+                    ['走失人数', '参加救援人数', '地区', ],
+                    [43.3, 47.4, '西湖区'],
+                    [83.1, 47.4, 'ss区', ],
+                    [86.4, 28.6, 'dong湖区'],
+                    [72.4, 75.4, '拱墅区'],
+                    [30.4, 85.4, '同轴区'],
+                    [50.9, 97.2, '留下区'],
+                ]
+            },
+            grid: { containLabel: true },
+            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+            xAxis: {},
+            // 声明一个 Y 轴，数值轴。
+            yAxis: { type: 'category' },
+            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+            series: [
+                { name: '走失人数', type: 'bar', encode: { x: '走失人数', y: '地区' } },
+                { name: '参加救援人数', type: 'bar', encode: { x: '参加救援人数', y: '地区' } },
+            ]
+        };
+
+
+
+
+
+        optionDR1 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '1048' },
+
+                ]
+            }]
+        };
+
+
+
+
+,
+  "oldNum_year":{
+    "data_num":[
+      1048
+    ]
+  }
+
+
+
+
+
+
+
+"oldman_short": [
+    {
+      "id": 1522,
+      "name": "wang",
+      "lose_address":"lalalaxihu",
+      "lose_time":"2021.3.21"
+    },
+    {
+      "id": 4212,
+      "name": "li",
+      "lose_address":"lalalaliuxia",
+      "lose_time":"2021.3.31"
+    },
+    {
+      "id": 3523,
+      "name": "weng",
+      "lose_address":"lalalatongzhou",
+      "lose_time":"2021.3.12"
+    },
+    {
+      "id": 4312,
+      "name": "chen",
+      "lose_address":"lalalaxibei",
+      "lose_time":"2021.3.15"
+    },{
+      "id": 5234,
+      "name": "han",
+      "lose_address":"lalalaanji",
+      "lose_time":"2021.3.16"
+    },{
+      "id": 1521,
+      "name": "liu",
+      "lose_address":"lalalagongchu",
+      "lose_time":"2021.3.22"
+    }
+  ],
+  "oldman_short_find": [
+    {
+      "id": 1522,
+      "name": "wang",
+      "find_address":"lalalaxihu",
+      "find_time":"2021.3.21"
+    },
+    {
+      "id": 4212,
+      "name": "li",
+      "find_address":"lalalaliuxia",
+      "find_time":"2021.3.31"
+    },
+    {
+      "id": 3523,
+      "name": "weng",
+      "find_address":"lalalatongzhou",
+      "find_time":"2021.3.12"
+    },
+    {
+      "id": 4312,
+      "name": "chen",
+      "find_address":"lalalaxibei",
+      "find_time":"2021.3.15"
+    },{
+      "id": 5234,
+      "name": "han",
+      "find_address":"lalalaanji",
+      "find_time":"2021.3.16"
+    },{
+      "id": 1521,
+      "name": "liu",
+      "find_address":"lalalagongchu",
+      "find_time":"2021.3.22"
+    }
+  ],
+  "oldNum":{
+    "categories":[
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月"
+    ],
+    "data_num":[
+      43,
+      56,
+      67,
+      76,
+      73,
+      12,
+      65,
+      25,
+      63,
+      90,
+      24,
+      53
+    ],
+    "data_succ":[
+      35.2,
+      45.5,
+      36.4,
+      98,
+      75.4,
+      89,
+      74.3,
+      56.4,
+      67.4,
+      87.4,
+      48.3,
+      90.2
+    ]
+  },
+  "oldAge":{
+    "categories":[
+      "80",
+      "81",
+      "82",
+      "83",
+      "84",
+      "85",
+      "86",
+      "87",
+      "89",
+      "92",
+      "95",
+      "96+"
+    ],
+    "data_num":[
+      43,
+      83,
+      86,
+      72,
+      30,
+      50,
+      90,
+      67,
+      87,
+      98,
+      67,
+      49
+    ]
+  },
+  "oldSum":{
+    "categories":[
+      "西湖区",
+      "留下区",
+      "lala区",
+      "拱墅区",
+      "刘曼区",
+      "同轴区"
+    ],
+    "sum_old":[
+      43,
+      83,
+      86,
+      72,
+      30,
+      50
+    ],
+    "sum_person":[
+      47,
+      47,
+      28,
+      75,
+      85,
+      97
+    ]
+  }
+
+
+
+        optionDR2 = {
+            tooltip: {
+                trigger: 'item'
+            },
+            // legend: {
+            //     top: '5%',
+            //     left: 'center'
+            // },
+            series: [{
+                name: '当年走失人数',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: true,
+                    fontWeight: 'bold',
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '18',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '1048' },
+
+                ],
+                itemStyle: {
+                    normal: {
+                        color: '#39F9A6',
+                    }
+                }
+            }]
+        };
+
+
+
+
+#3AB2FA
+
+#F26363
+
+
+
