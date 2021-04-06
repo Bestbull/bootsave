@@ -91,7 +91,7 @@
                                 <button class="add" style="margin-top: -5px;">查询</button>
                             </div>
                             <div style="float: left;padding: 5px;">
-                                <button class="add" style="margin-top: -5px;">重置选择</button>
+                                <button class="add" style="margin-top: -5px;" onclick="setNull()">重置选择</button>
                             </div>
                         </div>
                         <div>
@@ -649,6 +649,14 @@
         console.log(findMan_datas)
         var html = template('oldmbox2', findMan_datas);
         document.getElementById('old_2').innerHTML = html;
+        </script>
+
+<!-- 清空地区和年份选择 -->
+        <script type="text/javascript">
+            function setNull(){
+                document.getElementById('adds').value="";
+                document.getElementById('yeas').value="";
+            }
         </script>
 </body>
 
