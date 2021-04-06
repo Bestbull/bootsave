@@ -80,7 +80,7 @@
                                 </datalist>
                             </div>
                             <div style="float: left;padding: 5px;">
-                                <button class="add" style="margin-top: -5px;">查询</button>
+                                <button class="add" style="margin-top: -5px;" onclick="reChange2()">查询</button>
                             </div>
                             <div style="float: left;padding: 5px;">
                                 <button class="add" style="margin-top: -5px;" onclick="setNull()">重置选择</button>
@@ -90,6 +90,10 @@
                             <div id="data1" style="float:left;width: 500px;height: 250px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:50px;height: 30px; ">实时数据</div>
                                 <div style="font-size:12px;margin-left:50px;height: 40px; ">当前在线队员数</div>
+                                <div class="isshow3">
+                                    <span class="load"></span>
+                                    <span>加载中...</span>
+                                </div>
                                 <!-- 时间 -->
                                 <div id="only_time" style="margin-left: 90px;margin-top: 40px;font-size: 12px;"></div>
                                 <!-- 在线队员数 -->
@@ -111,6 +115,10 @@
                             <!-- 左下1 -->
                             <div id="data5" style="float:left;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">走失老人信息</div>
+                                <div class="isshow4">
+                                    <span class="load"></span>
+                                    <span>加载中...</span>
+                                </div>
                                 <!-- 渲染模板的位置 -->
                                 <table class="table table-striped" id="old_1"></table>
                                 <!-- 渲染模板 -->
@@ -150,6 +158,10 @@
                             <!-- 右下2 -->
                             <div id="data5" style="float:left;width:1010px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">队员信息</div>
+                                <div class="isshow5">
+                                    <span class="load"></span>
+                                    <span>加载中...</span>
+                                </div>
                                 <!-- 渲染模板的位置 -->
                                 <table class="table table-striped" id="old_2"></table>
                                 <!-- 渲染模板 -->
@@ -195,33 +207,43 @@
         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
         <script type="text/javascript">
         var h_num = document.getElementById('helperNum');
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                h_num.innerHTML = data.helperNum;
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
+
+        function help_num() {
+            $('.isshow3').css({ display: 'flex' })
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    $('.isshow3').css({ display: 'none' })
+                    h_num.innerHTML = data.helperNum;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+        }
+        help_num();
         </script>
         <script type="text/javascript">
         var onlyTime = document.getElementById('only_time');
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                onlyTime.innerHTML = data.onlyTime;
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
+
+        function only_Time() {
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    onlyTime.innerHTML = data.onlyTime;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+        }
+        only_Time();
         </script>
         <script>
         window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
@@ -233,49 +255,68 @@
             "aa": [],
         }
         //请求后台数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_detailed))
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        })
+        function lose_oldman2() {
+            $('.isshow4').css({ display: 'flex' })
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    $('.isshow4').css({ display: 'none' })
+                    loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_detailed));
+                    var html = template('oldmbox1', loseMan_datas);
+                    document.getElementById('old_1').innerHTML = html;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            })
+        }
+        lose_oldman2();
         console.log(loseMan_datas)
-        var html = template('oldmbox1', loseMan_datas);
-        document.getElementById('old_1').innerHTML = html;
         </script>
-        <!-- 渲染数据-find_oldman -->
+        <!-- 渲染数据-helperInfo -->
         <script type="text/javascript">
         var findMan_datas = {
             "bb": [],
         }
         //请求后台数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_helper))
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        })
+        function helperInfo2() {
+            $('.isshow5').css({ display: 'flex' })
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: false,
+                dataType: 'json',
+                success: function(data) {
+                    $('.isshow5').css({ display: 'none' })
+                    findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_helper));
+                    var html = template('oldmbox2', findMan_datas);
+                    document.getElementById('old_2').innerHTML = html;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            })
+        }
+        helperInfo2();
         console.log(findMan_datas)
-        var html = template('oldmbox2', findMan_datas);
-        document.getElementById('old_2').innerHTML = html;
         </script>
         <!-- 清空地区和年份选择 -->
         <script type="text/javascript">
         function setNull() {
             document.getElementById('adds').value = "";
             document.getElementById('yeas').value = "";
+        }
+        </script>
+        <!-- 数据更新 -->
+        <script type="text/javascript">
+        function reChange2() {
+            help_num();
+            onlyTime();
+            lose_oldman2();
+            helperInfo2();
         }
         </script>
 </body>

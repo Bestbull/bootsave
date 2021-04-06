@@ -145,6 +145,10 @@
                             <!-- 左下1 -->
                             <div id="data5" style="float:left;width:500px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">走失老人信息</div>
+                                <div class="isshow1">
+                                    <span class="load"></span>
+                                    <span>加载中...</span>
+                                </div>
                                 <!-- 渲染模板的位置 -->
                                 <table class="table table-striped" id="old_1"></table>
                                 <!-- 渲染模板 -->
@@ -174,6 +178,10 @@
                             <!-- 右下2 -->
                             <div id="data5" style="float:left;width:500px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:155px; ">老人找到时间</div>
+                                <div class="isshow2">
+                                    <span class="load"></span>
+                                    <span>加载中...</span>
+                                </div>
                                 <!-- 渲染模板的位置 -->
                                 <table class="table table-striped" id="old_2"></table>
                                 <!-- 渲染模板 -->
@@ -642,6 +650,7 @@
         }
 
         function lose_oldman() {
+            $('.isshow1').css({ display: 'flex' })
             //请求后台数据
             $.ajax({
                 type: 'get',
@@ -649,6 +658,7 @@
                 async: true,
                 dataType: 'json',
                 success: function(data) {
+                    $('.isshow1').css({ display: 'none' })
                     loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_short));
                     var html = template('oldmbox1', loseMan_datas);
                     document.getElementById('old_1').innerHTML = html;
@@ -669,6 +679,7 @@
         }
 
         function find_oldman() {
+            $('.isshow2').css({ display: 'flex' })
             //请求后台数据
             $.ajax({
                 type: 'get',
@@ -676,6 +687,7 @@
                 async: true,
                 dataType: 'json',
                 success: function(data) {
+                    $('.isshow2').css({ display: 'none' })
                     findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_short_find));
                     var html = template('oldmbox2', findMan_datas);
                     document.getElementById('old_2').innerHTML = html;
