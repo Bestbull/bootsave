@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!--    引入ECharts文件-->
+    <script src="https://cdn.staticfile.org/echarts/5.0.2/echarts.min.js"></script>
+    <!-- 引入Jquery -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <!-- 引入art-template.js -->
+    <script src="art-template.js" type="text/javascript" charset="utf-8"></script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>居家救援救援监控</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="dashboard.css" rel="stylesheet">
+</head>
+<style type="text/css">
+</style>
+
+<body>
+    <!--导航栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">居家救援数据监控系统</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">欢迎您 ,</a></li>
+                    <li><a href="#">130706754350</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <!--侧边栏-->
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="#">救援汇总</a></li>
+                    <li class="active"><a href="#">救援申请监控</a></li>
+                    <!-- <li><a href="#">订单审核</a></li> -->
+                    <!-- <li><a href="#">民宿信息审核</a></li> -->
+                </ul>
+            </div>
+            <!--数据监控-->
+            <div id="my_bgc" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div id="mysub-header">
+                    <h1 class="sub-header">救援汇总</h1>
+                </div>
+                <div class="table-responsive">
+                    <div class="table table-striped">
+                        <!-- 筛选头 -->
+                        <div id="head_bar" style="width:1000px;height: 40px;margin: 20px;">
+                            <div style="float: left;font-size: 16px;padding: 5px;">统计地区</div>
+                            <div style="padding: 5px;float: left;">
+                                <input list="address" id="adds">
+                                <datalist id="address">
+                                        <option value="杭州市">
+                                            <option value="南京市">
+                                            <option value="运城市">
+                                            <option value="太原市">
+                                            <option value="湖州市">
+                                </datalist>
+                            </div>
+                            <div style="float: left;font-size: 16px;padding: 5px;">年份</div>
+                            <div style="padding: 5px; float: left;">
+                                <input list="year" id="yeas">
+                                <datalist id="year">
+                                        <option value="2020">
+                                            <option value="2019">
+                                            <option value="2018">
+                                            <option value="2017">
+                                            <option value="2016">
+                                </datalist>
+                            </div>
+                            <div style="float: left;padding: 5px;">
+                                <button class="add" style="margin-top: -5px;">查询</button>
+                            </div>
+                            <div style="float: left;padding: 5px;">
+                                <button class="add" style="margin-top: -5px;" onclick="setNull()">重置选择</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="data1" style="float:left;width: 500px;height: 250px;margin-left: 20px;">
+                                <div style="font-size:18px;margin-left:50px;height: 30px; ">实时数据</div>
+                                <div style="font-size:12px;margin-left:50px;height: 40px; ">当前在线队员数</div>
+                                <!-- 时间 -->
+                                <div id="only_time" style="margin-left: 90px;margin-top: 40px;font-size: 12px;"></div>
+                                <!-- 在线队员数 -->
+                                <div id="helperNum" style="margin-left: 120px;margin-top: 20px;font-size: 36px;font-weight: 200;color: #030303"></div>
+                            </div>
+                            <div id="data2" style="float:left;width: 500px;height: 250px;margin-left: 20px;">
+                                <div style="float: left;font-size: 16px;padding: 25px;">监控地区</div>
+                                <div style="padding: 25px;float: left;">
+                                    <input list="address" id="adds">
+                                    <datalist id="address">
+                                            <option value="西湖区">
+                                                <option value="留下区">
+                                                <option value="拱墅区">
+                                                <option value="新通区">
+                                                <option value="lala区">
+                                    </datalist>
+                                </div>
+                            </div>
+                            <!-- 左下1 -->
+                            <div id="data5" style="float:left;margin-left: 20px;">
+                                <div style="font-size:18px;margin-left:155px; ">走失老人信息</div>
+                                <!-- 渲染模板的位置 -->
+                                <table class="table table-striped" id="old_1"></table>
+                                <!-- 渲染模板 -->
+                                <script type="text/html" id="oldmbox1">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>姓名</th>
+                                            <th>走失地区</th>
+                                            <th>走失时间</th>
+                                            <th>老人特征</th>
+                                            <th>家属联系方式</th>
+                                            <th>病情描述</th>
+                                            <th>老人照片</th>
+                                            <th>参与救援数</th>
+                                            <th>是否被找到</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{ each aa }}
+                                    <tr>
+                                        <td>{{ $value.id }}</td>
+                                        <td>{{ $value.name }}</td>
+                                        <td>{{ $value.lose_address }}</td>
+                                        <td>{{ $value.lose_time }}</td>
+                                        <td>{{ $value.features }}</td>
+                                        <td>{{ $value.family_phone }}</td>
+                                        <td>{{ $value.illness }}</td>
+                                        <td><img src="{{ $value.photo}}" alt=""/></td>
+                                        <td>{{ $value.helpNum }}</td>
+                                        <td>{{ $value.isHelped }}</td>
+                                    </tr>
+                                    {{ /each }}
+                                    </tbody>
+                                </script>
+                            </div>
+                            <!-- 右下2 -->
+                            <div id="data5" style="float:left;width:1010px;margin-left: 20px;">
+                                <div style="font-size:18px;margin-left:155px; ">队员信息</div>
+                                <!-- 渲染模板的位置 -->
+                                <table class="table table-striped" id="old_2"></table>
+                                <!-- 渲染模板 -->
+                                <script type="text/html" id="oldmbox2">
+                                    <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>姓名</th>
+                                            <th>行动是否方便</th>
+                                            <th>出行工具</th>
+                                            <th>联系方式</th>
+                                            <th>身体状况</th>
+                                            <th>装备是否齐全</th>
+                                            <th>队员照片</th>
+                                            <th>是否已参与救援</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{ each bb }}
+                                    <tr>
+                                        <td>{{ $value.id }}</td>
+                                        <td>{{ $value.name }}</td>
+                                        <td>{{ $value.is_ready_go }}</td>
+                                        <td>{{ $value.travel_tool }}</td>
+                                        <td>{{ $value.helper_phone }}</td>
+                                        <td>{{ $value.body_infor }}</td>
+                                        <td>{{ $value.is_ready_equip }}</td>
+                                        <td><img src="{{ $value.helper_photo}}" alt=""/></td>
+                                        <td>{{ $value.is_join_help }}</td>
+                                    </tr>
+                                    {{ /each }}
+                                    </tbody>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+        var h_num = document.getElementById('helperNum');
+        $.ajax({
+            type: 'get',
+            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+            async: true,
+            dataType: 'json',
+            success: function(data) {
+                h_num.innerHTML = data.helperNum;
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("报错");
+            }
+        });
+        </script>
+        <script type="text/javascript">
+        var onlyTime = document.getElementById('only_time');
+        $.ajax({
+            type: 'get',
+            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+            async: true,
+            dataType: 'json',
+            success: function(data) {
+                onlyTime.innerHTML = data.onlyTime;
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("报错");
+            }
+        });
+        </script>
+        <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- 渲染数据-lose_oldman -->
+        <script type="text/javascript">
+        var loseMan_datas = {
+            "aa": [],
+        }
+        //请求后台数据
+        $.ajax({
+            type: 'get',
+            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_detailed))
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("报错");
+            }
+        })
+        console.log(loseMan_datas)
+        var html = template('oldmbox1', loseMan_datas);
+        document.getElementById('old_1').innerHTML = html;
+        </script>
+        <!-- 渲染数据-find_oldman -->
+        <script type="text/javascript">
+        var findMan_datas = {
+            "bb": [],
+        }
+        //请求后台数据
+        $.ajax({
+            type: 'get',
+            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_helper))
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("报错");
+            }
+        })
+        console.log(findMan_datas)
+        var html = template('oldmbox2', findMan_datas);
+        document.getElementById('old_2').innerHTML = html;
+        </script>
+        <!-- 清空地区和年份选择 -->
+        <script type="text/javascript">
+        function setNull() {
+            document.getElementById('adds').value = "";
+            document.getElementById('yeas').value = "";
+        }
+        </script>
+</body>
+
+</html>

@@ -141,6 +141,16 @@ body {
 {
     font-size: 20px;
 }
+.table-striped img{
+    width: 50px;
+    height: 50px;
+}
+.table-striped img:hover{
+    position: relative;
+    z-index: 999;
+    transform: scale(2);
+    transition: all 0.6s;
+}
 .add{
     float: left;
     margin-left: 10px;
