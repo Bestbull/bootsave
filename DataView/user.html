@@ -43,7 +43,7 @@
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="#">救援汇总</a></li>
-                    <li><a href="#">救援申请监控</a></li>
+                    <li><a href="./user_watch.html">救援申请监控</a></li>
                     <!-- <li><a href="#">订单审核</a></li> -->
                     <!-- <li><a href="#">民宿信息审核</a></li> -->
                 </ul>
@@ -88,7 +88,7 @@
                                 </datalist>
                             </div>
                             <div style="float: left;padding: 5px;">
-                                <button class="add" style="margin-top: -5px;">查询</button>
+                                <button class="add" style="margin-top: -5px;" onclick="reChange()">查询</button>
                             </div>
                             <div style="float: left;padding: 5px;">
                                 <button class="add" style="margin-top: -5px;" onclick="setNull()">重置选择</button>
@@ -218,445 +218,497 @@
         var donCharts1 = document.getElementById('dataCon1');
         var instence1 = echarts.init(donCharts1);
         var option1;
-        option1 = {
-            // title:{
-            //     text:'走失老人数与救援成功率'
-            // },
-            legend: {},
-            tooltip: {},
-            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-            xAxis: { data: [] },
-            // 声明一个 Y 轴，数值轴。
-            yAxis: {},
-            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
-            series: [
-                { name: '走失人数', type: 'bar', data: [] },
-                { name: '救援成功率', type: 'line', data: [] },
-            ]
-        };
-        instence1.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instence1.hideLoading();
-                instence1.setOption({
-                    xAxis: {
-                        data: data.oldNum.categories
-                    },
-                    series: [{
-                        name: '走失人数',
-                        data: data.oldNum.data_num
-                    }, {
-                        name: '救援成功率',
-                        data: data.oldNum.data_succ
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
+
+        function dataCon1() {
+
+            option1 = {
+                // title:{
+                //     text:'走失老人数与救援成功率'
+                // },
+                legend: {},
+                tooltip: {},
+                // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+                xAxis: { data: [] },
+                // 声明一个 Y 轴，数值轴。
+                yAxis: {},
+                // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+                series: [
+                    { name: '走失人数', type: 'bar', data: [] },
+                    { name: '救援成功率', type: 'line', data: [] },
+                ]
+            };
+            instence1.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instence1.hideLoading();
+                    instence1.setOption({
+                        xAxis: {
+                            data: data.oldNum.categories
+                        },
+                        series: [{
+                            name: '走失人数',
+                            data: data.oldNum.data_num
+                        }, {
+                            name: '救援成功率',
+                            data: data.oldNum.data_succ
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
 
 
-        option1 && instence1.setOption(option1);
+            option1 && instence1.setOption(option1);
+        }
+        dataCon1();
         </script>
         <!-- dataCon2 -->
         <script type="text/javascript">
         var donCharts2 = document.getElementById('dataCon2');
         var instence2 = echarts.init(donCharts2);
         var option2;
-        option2 = {
-            legend: {},
-            tooltip: {},
-            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-            xAxis: { data: [] },
-            // 声明一个 Y 轴，数值轴。
-            yAxis: {},
-            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
-            series: [
-                { name: '人数', type: 'line', smooth: true, data: [] },
-            ]
-        };
-        instence2.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instence2.hideLoading();
-                instence2.setOption({
-                    xAxis: {
-                        data: data.oldAge.categories
-                    },
-                    series: [{
-                        name: '人数',
-                        data: data.oldAge.data_num
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
 
-        option2 && instence2.setOption(option2);
+        function dataCon2() {
+            option2 = {
+                legend: {},
+                tooltip: {},
+                // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+                xAxis: { data: [] },
+                // 声明一个 Y 轴，数值轴。
+                yAxis: {},
+                // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+                series: [
+                    { name: '人数', type: 'line', smooth: true, data: [] },
+                ]
+            };
+            instence2.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instence2.hideLoading();
+                    instence2.setOption({
+                        xAxis: {
+                            data: data.oldAge.categories
+                        },
+                        series: [{
+                            name: '人数',
+                            data: data.oldAge.data_num
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+
+            option2 && instence2.setOption(option2);
+        }
+        dataCon2();
         </script>
         <!-- dataRight2 -->
         <script type="text/javascript">
         var donChartsR2 = document.getElementById('dataRight2');
         var instenceR2 = echarts.init(donChartsR2);
         var optionR2;
-        optionR2 = {
-            // title:{
-            //     text:'走失老人数与救援成功率'
-            // },
-            legend: {},
-            tooltip: {},
-            // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
-            grid: { containLabel: true },
-            xAxis: {},
-            // 声明一个 Y 轴，数值轴。
-            yAxis: { data: [] },
-            // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
-            series: [
-                { name: '走失人数', type: 'bar', data: [] },
-                { name: '参加救援人数', type: 'bar', data: [] },
-            ]
-        };
-        instenceR2.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instenceR2.hideLoading();
-                instenceR2.setOption({
-                    yAxis: {
-                        data: data.oldSum.categories
-                    },
-                    series: [{
-                        name: '走失人数',
-                        data: data.oldSum.sum_old
-                    }, {
-                        name: '参加救援人数',
-                        data: data.oldSum.sum_person
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
-        optionR2 && instenceR2.setOption(optionR2);
+
+        function dataRight2() {
+            optionR2 = {
+                // title:{
+                //     text:'走失老人数与救援成功率'
+                // },
+                legend: {},
+                tooltip: {},
+                // 声明一个 X 轴，类目轴（category）。默认情况下，类目轴对应到 dataset 第一列。
+                grid: { containLabel: true },
+                xAxis: {},
+                // 声明一个 Y 轴，数值轴。
+                yAxis: { data: [] },
+                // 声明多个 bar 系列，默认情况下，每个系列会自动对应到 dataset 的每一列。
+                series: [
+                    { name: '走失人数', type: 'bar', data: [] },
+                    { name: '参加救援人数', type: 'bar', data: [] },
+                ]
+            };
+            instenceR2.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instenceR2.hideLoading();
+                    instenceR2.setOption({
+                        yAxis: {
+                            data: data.oldSum.categories
+                        },
+                        series: [{
+                            name: '走失人数',
+                            data: data.oldSum.sum_old
+                        }, {
+                            name: '参加救援人数',
+                            data: data.oldSum.sum_person
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+            optionR2 && instenceR2.setOption(optionR2);
+        }
+        dataRight2();
         </script>
         <!-- DR1 -->
         <script type="text/javascript">
         var donChartsDR1 = document.getElementById('DR1');
         var instanceDR1 = echarts.init(donChartsDR1);
         var optionDR1;
-        optionDR1 = {
-            tooltip: {
-                trigger: 'item'
-            },
-            // legend: {
-            //     top: '5%',
-            //     left: 'center'
-            // },
-            series: [{
-                name: '当年走失人数',
-                type: 'pie',
-                data: []
-            }]
-        };
-        instanceDR1.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instanceDR1.hideLoading();
-                instanceDR1.setOption({
-                    series: [{
-                        name: '当年走失人数',
-                        data: [{ value: data.oldNum_year.data_num, name: JSON.stringify(data.oldNum_year.data_num) }],
-                        radius: ['40%', '70%'],
-                        avoidLabelOverlap: false,
-                        label: {
-                            show: true,
-                            fontWeight: 'bold',
-                            position: 'center'
-                        },
-                        emphasis: {
+
+        function DR1() {
+            optionDR1 = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                // legend: {
+                //     top: '5%',
+                //     left: 'center'
+                // },
+                series: [{
+                    name: '当年走失人数',
+                    type: 'pie',
+                    data: []
+                }]
+            };
+            instanceDR1.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instanceDR1.hideLoading();
+                    instanceDR1.setOption({
+                        series: [{
+                            name: '当年走失人数',
+                            data: [{ value: data.oldNum_year.data_num, name: JSON.stringify(data.oldNum_year.data_num) }],
+                            radius: ['40%', '70%'],
+                            avoidLabelOverlap: false,
                             label: {
                                 show: true,
-                                fontSize: '18',
-                                fontWeight: 'bold'
-                            }
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
+                                fontWeight: 'bold',
+                                position: 'center'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '18',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
 
-        optionDR1 && instanceDR1.setOption(optionDR1);
+            optionDR1 && instanceDR1.setOption(optionDR1);
+        }
+        DR1();
         </script>
         <!-- DR2 -->
         <script type="text/javascript">
         var donChartsDR2 = document.getElementById('DR2');
         var instanceDR2 = echarts.init(donChartsDR2);
         var optionDR2;
-        optionDR2 = {
-            tooltip: {
-                trigger: 'item'
-            },
-            // legend: {
-            //     top: '5%',
-            //     left: 'center'
-            // },
-            series: [{
-                name: '当年成功救援人数',
-                type: 'pie',
-                data: [],
-            }]
-        };
-        instanceDR2.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instanceDR2.hideLoading();
-                instanceDR2.setOption({
-                    series: [{
-                        name: '当年成功救援人数',
-                        data: [{ value: data.oldSuccNum_year.data_num, name: JSON.stringify(data.oldSuccNum_year.data_num) }],
-                        itemStyle: {
-                            normal: {
-                                color: '#39F9A6',
-                            }
-                        },
-                        radius: ['40%', '70%'],
-                        avoidLabelOverlap: false,
-                        label: {
-                            show: true,
-                            fontWeight: 'bold',
-                            position: 'center'
-                        },
-                        emphasis: {
+
+        function DR2() {
+            optionDR2 = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                // legend: {
+                //     top: '5%',
+                //     left: 'center'
+                // },
+                series: [{
+                    name: '当年成功救援人数',
+                    type: 'pie',
+                    data: [],
+                }]
+            };
+            instanceDR2.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instanceDR2.hideLoading();
+                    instanceDR2.setOption({
+                        series: [{
+                            name: '当年成功救援人数',
+                            data: [{ value: data.oldSuccNum_year.data_num, name: JSON.stringify(data.oldSuccNum_year.data_num) }],
+                            itemStyle: {
+                                normal: {
+                                    color: '#39F9A6',
+                                }
+                            },
+                            radius: ['40%', '70%'],
+                            avoidLabelOverlap: false,
                             label: {
                                 show: true,
-                                fontSize: '18',
-                                fontWeight: 'bold'
-                            }
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
+                                fontWeight: 'bold',
+                                position: 'center'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '18',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
 
-        optionDR2 && instanceDR2.setOption(optionDR2);
+            optionDR2 && instanceDR2.setOption(optionDR2);
+        }
+        DR2();
         </script>
         <!-- DR3 -->
         <script type="text/javascript">
         var donChartsDR3 = document.getElementById('DR3');
         var instanceDR3 = echarts.init(donChartsDR3);
         var optionDR3;
+
+        function DR3() {
             optionDR3 = {
-            tooltip: {
-                trigger: 'item'
-            },
-            // legend: {
-            //     top: '5%',
-            //     left: 'center'
-            // },
-            series: [{
-                name: '当年参与救援人数',
-                type: 'pie',
-                data: [],
-            }]
-        };
-        instanceDR3.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instanceDR3.hideLoading();
-                instanceDR3.setOption({
-                    series: [{
-                        name: '当年参与救援人数',
-                        data: [{ value: data.personNum_year.data_num, name: JSON.stringify(data.personNum_year.data_num) }],
-                        itemStyle: {
-                            normal: {
-                                color: '#3AB2FA',
-                            }
-                        },
-                        radius: ['40%', '70%'],
-                        avoidLabelOverlap: false,
-                        label: {
-                            show: true,
-                            fontWeight: 'bold',
-                            position: 'center'
-                        },
-                        emphasis: {
+                tooltip: {
+                    trigger: 'item'
+                },
+                // legend: {
+                //     top: '5%',
+                //     left: 'center'
+                // },
+                series: [{
+                    name: '当年参与救援人数',
+                    type: 'pie',
+                    data: [],
+                }]
+            };
+            instanceDR3.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instanceDR3.hideLoading();
+                    instanceDR3.setOption({
+                        series: [{
+                            name: '当年参与救援人数',
+                            data: [{ value: data.personNum_year.data_num, name: JSON.stringify(data.personNum_year.data_num) }],
+                            itemStyle: {
+                                normal: {
+                                    color: '#3AB2FA',
+                                }
+                            },
+                            radius: ['40%', '70%'],
+                            avoidLabelOverlap: false,
                             label: {
                                 show: true,
-                                fontSize: '18',
-                                fontWeight: 'bold'
-                            }
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
-        optionDR3 && instanceDR3.setOption(optionDR3);
+                                fontWeight: 'bold',
+                                position: 'center'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '18',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+            optionDR3 && instanceDR3.setOption(optionDR3);
+        }
+        DR3();
         </script>
         <!-- DR4 -->
         <script type="text/javascript">
         var donChartsDR4 = document.getElementById('DR4');
         var instanceDR4 = echarts.init(donChartsDR4);
         var optionDR4;
+
+        function DR4() {
             optionDR4 = {
-            tooltip: {
-                trigger: 'item'
-            },
-            // legend: {
-            //     top: '5%',
-            //     left: 'center'
-            // },
-            series: [{
-                name: '当年走失老人的平均年龄',
-                type: 'pie',
-                data: [],
-            }]
-        };
-        instanceDR4.showLoading();
-        //异步加载数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: true,
-            dataType: 'json',
-            success: function(data) {
-                instanceDR4.hideLoading();
-                instanceDR4.setOption({
-                    series: [{
-                        name: '当年走失老人的平均年龄',
-                        data: [{ value: data.oldAvgAge_year.data_num, name: JSON.stringify(data.oldAvgAge_year.data_num) }],
-                        itemStyle: {
-                            normal: {
-                                color: '#F26363',
-                            }
-                        },
-                        radius: ['40%', '70%'],
-                        avoidLabelOverlap: false,
-                        label: {
-                            show: true,
-                            fontWeight: 'bold',
-                            position: 'center'
-                        },
-                        emphasis: {
+                tooltip: {
+                    trigger: 'item'
+                },
+                // legend: {
+                //     top: '5%',
+                //     left: 'center'
+                // },
+                series: [{
+                    name: '当年走失老人的平均年龄',
+                    type: 'pie',
+                    data: [],
+                }]
+            };
+            instanceDR4.showLoading();
+            //异步加载数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    instanceDR4.hideLoading();
+                    instanceDR4.setOption({
+                        series: [{
+                            name: '当年走失老人的平均年龄',
+                            data: [{ value: data.oldAvgAge_year.data_num, name: JSON.stringify(data.oldAvgAge_year.data_num) }],
+                            itemStyle: {
+                                normal: {
+                                    color: '#F26363',
+                                }
+                            },
+                            radius: ['40%', '70%'],
+                            avoidLabelOverlap: false,
                             label: {
                                 show: true,
-                                fontSize: '18',
-                                fontWeight: 'bold'
-                            }
-                        },
-                        labelLine: {
-                            show: false
-                        },
-                    }]
-                });
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        });
-        optionDR4 && instanceDR4.setOption(optionDR4);
+                                fontWeight: 'bold',
+                                position: 'center'
+                            },
+                            emphasis: {
+                                label: {
+                                    show: true,
+                                    fontSize: '18',
+                                    fontWeight: 'bold'
+                                }
+                            },
+                            labelLine: {
+                                show: false
+                            },
+                        }]
+                    });
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            });
+            optionDR4 && instanceDR4.setOption(optionDR4);
+        }
+        DR4();
         </script>
         <!-- 渲染数据-lose_oldman -->
         <script type="text/javascript">
         var loseMan_datas = {
             "aa": [],
         }
-        //请求后台数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_short))
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        })
-        console.log(loseMan_datas)
-        var html = template('oldmbox1', loseMan_datas);
-        document.getElementById('old_1').innerHTML = html;
+
+        function lose_oldman() {
+            //请求后台数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    loseMan_datas.aa = JSON.parse(JSON.stringify(data.oldman_short));
+                    var html = template('oldmbox1', loseMan_datas);
+                    document.getElementById('old_1').innerHTML = html;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            })
+            console.log(loseMan_datas)
+
+        }
+        lose_oldman();
         </script>
         <!-- 渲染数据-find_oldman -->
         <script type="text/javascript">
         var findMan_datas = {
             "bb": [],
         }
-        //请求后台数据
-        $.ajax({
-            type: 'get',
-            url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_short_find))
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("报错");
-            }
-        })
-        console.log(findMan_datas)
-        var html = template('oldmbox2', findMan_datas);
-        document.getElementById('old_2').innerHTML = html;
-        </script>
 
-<!-- 清空地区和年份选择 -->
+        function find_oldman() {
+            //请求后台数据
+            $.ajax({
+                type: 'get',
+                url: 'https://my-json-server.typicode.com/wzc520pyfm/My_test_Json/oldman',
+                async: true,
+                dataType: 'json',
+                success: function(data) {
+                    findMan_datas.bb = JSON.parse(JSON.stringify(data.oldman_short_find));
+                    var html = template('oldmbox2', findMan_datas);
+                    document.getElementById('old_2').innerHTML = html;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("报错");
+                }
+            })
+            console.log(findMan_datas)
+
+        }
+        find_oldman();
+        </script>
+        <!-- 清空地区和年份选择 -->
         <script type="text/javascript">
-            function setNull(){
-                document.getElementById('adds').value="";
-                document.getElementById('yeas').value="";
-            }
+        function setNull() {
+            document.getElementById('adds').value = "";
+            document.getElementById('yeas').value = "";
+        }
+        </script>
+        <!-- 数据更新 -->
+        <script type="text/javascript">
+        function reChange() {
+            dataCon1();
+            dataCon2();
+            dataRight2();
+            DR1();
+            DR2();
+            DR3();
+            DR4();
+            lose_oldman();
+            find_oldman();
+        }
         </script>
 </body>
 
