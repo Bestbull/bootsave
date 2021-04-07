@@ -89,7 +89,7 @@
                         <div>
                             <div id="data1" style="float:left;width: 500px;height: 250px;margin-left: 20px;">
                                 <div style="font-size:18px;margin-left:50px;height: 30px; ">实时数据</div>
-                                <div style="font-size:12px;margin-left:50px;height: 40px; ">当前在线队员数</div>
+                                <div style="font-size:12px;margin-left:50px;height: 40px; ">当前在线队员数(每30秒更新一次)</div>
                                 <div class="isshow3">
                                     <span class="load"></span>
                                     <span>加载中...</span>
@@ -318,6 +318,13 @@
             lose_oldman2();
             helperInfo2();
         }
+        </script>
+<!-- 实时更新数据 -->
+        <script type="text/javascript">
+            function reSet(){
+                setInterval("reChange2()",30000);
+            }
+            reSet();
         </script>
 </body>
 
