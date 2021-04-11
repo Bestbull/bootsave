@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view>
+  <!-- <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  <view id="topInfo" style="height:350rpx;width:100%;background-color:#3388EC;">
+    <view id="topImage" style="width:114rpx;height:114rpx;">
+      <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_index1.png" mode="center" style="margin-left:-162rpx; margin-top:-55rpx;"></image>
+    </view>
+    <view id="column" style="margin-left:384rpx;color:white;">
+      <view id="c1" style="margin-top:-20rpx;">
+        <text style="font-size:35rpx;font-weight:bold;">极客救援</text>
+      </view>
+      <view id="c2" style="margin-top:50rpx;">快速审批,急速行动。</view>
+    </view>
+  </view>
+  <view id="fm_buttons" style="display:flex;flex-direction: column;">
+    <view id="btn1" style="margin: 30rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;display:flex;flex-direction:row;" bindtap="apply_help">
+        <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:104rpx;margin-top:65rpx;">申请救援</text>
+        <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_index2.png" mode="center" style="width:300rpx;margin-top: -150rpx;margin-left:104rpx;"></image>
+    </view>
+    <view id="btn1" style="margin: 30rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;display:flex;flex-direction:row;">
+      <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_index3.png" mode="center" style="width:300rpx;margin-top: -150rpx;margin-left:0rpx;"></image>
+      <text style="width:200rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:104rpx;margin-top:65rpx;">已进行的救援</text>
+    </view>
+    <view id="btn1" style="margin: 30rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;display:flex;flex-direction:row;">
+        <text style="width:220rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:104rpx;margin-top:65rpx;">周边救援行动</text>
+        <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_index4.png" mode="center" style="width:300rpx;margin-top: -150rpx;margin-left:34rpx;"></image>
+    </view>
+  </view>
+</view>

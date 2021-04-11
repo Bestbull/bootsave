@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/apply/apply",
+    "pages/index/index",
+    
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#427BEE",
+    "navigationBarTitleText": "极客救援",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
