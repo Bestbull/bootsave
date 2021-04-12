@@ -1,9 +1,57 @@
 <!--pages/apply/apply.wxml-->
-<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-58rpx"></image>
+<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-58rpx;"></image>
+  <view id="btn1" style="margin: -330rpx 40rpx 30rpx 40rpx; width:666rpx;height:570rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">姓名</text>
+      <input style="width:300rpx; margin-left:300rpx;" auto-focus placeholder="失踪者姓名"/>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">性别</text>
+      <input style="width:300rpx; margin-left:300rpx;" auto-focus placeholder="男/女"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">年龄</text>
+      <input style="width:300rpx; margin-left:300rpx;" auto-focus placeholder="Age"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">家属联系电话</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="PhoneNumber"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;height:70rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">特征描述</text>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <!-- 多行输入框 -->
+      <textarea style="width:500rpx;height:120rpx; margin-left:100rpx;font-size:16;" auto-focus placeholder="选填,请输入老人的外貌,行为等的特征,以方便救援队员辨认老人."/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+  </view>
 
-<view id="btn1" style="margin: 30rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;display:flex;flex-direction:row;" bindtap="apply_help">
-  <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:104rpx;margin-top:65rpx;">申请救援</text>
-  <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_index2.png" mode="center" style="width:300rpx;margin-top: -150rpx;margin-left:104rpx;"></image>
-</view>
 
+  <view id="btn1" style="margin: 270rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">走失时间</text>
+      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="输入日期"/>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">疑似走失地点</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="address"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+  </view>
 
+  <view id="btn1" style="margin: 500rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">更多详细信息</text>
+      <text style="width:300rpx; margin-left:100rpx;">选填 ></text>
+    </view>
+  </view>
+
+  <button style="margin-top:600rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none">提交</button>

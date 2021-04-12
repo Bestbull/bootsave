@@ -1,1 +1,4 @@
 /* pages/apply/apply.wxss */
+.myhover{
+  background-color:blue;
+}
