@@ -1,0 +1,58 @@
+<!--pages/applying/applying.wxml-->
+<!--pages/apply/apply.wxml-->
+<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-100rpx;"></image>
+  <view id="btn1" style="margin: -330rpx 40rpx 30rpx 40rpx; width:666rpx;height:370rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">发起人:</text>
+      <input style="width:200rpx; margin-left:300rpx;" auto-focus placeholder="张四"/>
+    </view>
+    <view style="display:flex;flex-direction:row;margin-top:0rpx;">
+      <text style="width:370rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">创建时间:</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="2020-04-13 09:00"/>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪老人:</text>
+      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="张三三"/>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪天数:</text>
+      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="1天"/>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:370rpx;height:70rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪时间:</text>
+      <input style="width:300rpx; margin-left:0px;" auto-focus placeholder="2020-04-13 09:00"/>
+    </view>
+    <view style="display:flex;flex-direction:row;margin-top:-20rpx;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪地点:</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="杭州市西湖区"/>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">患病情况:</text>
+      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="早期"/>
+    </view>
+  </view>
+
+
+  <view id="btn1" style="margin: 310rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">走失时间</text>
+      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="输入日期"/>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">疑似走失地点</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="address"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+  </view>
+
+  <view id="btn1" style="margin: 540rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">更多详细信息</text>
+      <text style="width:300rpx; margin-left:100rpx;">选填 ></text>
+    </view>
+  </view>
+
+  <button style="margin-top:640rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none">提交</button>
+

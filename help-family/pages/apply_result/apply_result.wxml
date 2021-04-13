@@ -1,0 +1,36 @@
+<!--pages/apply_result/apply_result.wxml-->
+<page style="height:100%;">
+  <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-58rpx;"></image>
+<!-- 外层水平居中控制view -->
+<view style="display:flex;flex-direction:row;justify-content:center;margin-top:-520rpx;height:1550rpx;">
+  <!-- 内层垂直居中控制view -->
+  <view style="display:flex;flex-direction:column;justify-content:flex-start;">
+    <image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_result1.png" mode="center" style="margin-top:0rpx;"></image>
+    <view style="text-align:center;margin-top:-100rpx;">
+      <text style="font-size:40rpx;color:white;">三级</text>
+    </view>
+    <view style="text-align:center;margin-top:50rpx;">
+      <text style="font-size:28rpx;">救援等级三级,已达救援标准,将马上出动队员施救</text>
+    </view>
+    <view style="text-align:center;margin-top:100rpx;">
+      <button style="width:640rpx;height:100rpx;background-color:#35AD1A;display:flex;flex-direction:column;justify-content:center;">
+        <text style="color:white;font-size:40rpx;">查看救援情况</text>
+      </button>
+    </view>
+    <view style="text-align:center;margin-top:20rpx;">
+      <button style="width:640rpx;height:100rpx;background-color:#BDC1C1;display:flex;flex-direction:column;justify-content:center;">
+        <text style="font-size:40rpx;">补充信息</text>
+      </button>
+    </view>
+        <!-- 占位 -->
+        <!-- <view style="height:500rpx;"></view> -->
+    <view style="text-align:center;margin-top:400rpx;">
+      <text style="font-size:28rpx;color:#586C94;">极客救援</text>
+    </view>
+    <view style="text-align:center;">
+      <text style="font-size:28rpx;">Copyright@2020-2021 jike.io</text>
+    </view>
+  </view>
+</view>
+
+</page>

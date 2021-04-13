@@ -1,0 +1,5 @@
+/* pages/apply_result/apply_result.wxss */
+
+page{
+  padding-bottom:1rpx; /*解决 margin-bottom 失效的问题*/
+}

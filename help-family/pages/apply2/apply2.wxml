@@ -1,0 +1,42 @@
+<!--pages/apply2/apply2.wxml-->
+
+<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-58rpx;"></image>
+  <view id="btn1" style="margin: -330rpx 40rpx 30rpx 40rpx; width:666rpx;height:1040rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">患病时间</text>
+      <input style="width:300rpx; margin-left:190rpx;" auto-focus placeholder="请输入时间"/>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">病情描述</text>
+      <input style="width:300rpx; margin-left:190rpx;" auto-focus placeholder="严重否?"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">居住地址</text>
+      <input style="width:300rpx; margin-left:190rpx;" auto-focus placeholder="homeAddress"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">老人常去地点</text>
+      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="尽量准确"/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:160rpx;height:70rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">老人照片</text>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <!-- 多行输入框 -->
+      <textarea style="width:500rpx;height:120rpx; margin-left:100rpx;font-size:16;" auto-focus placeholder="请上传老人照片."/>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <!-- 占位盒子 -->
+      <view style="width:500rpx;height:450rpx; margin-left:100rpx;font-size:16;"></view>
+    </view>
+  </view>
+
+
+
+
