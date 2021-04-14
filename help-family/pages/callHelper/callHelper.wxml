@@ -1,0 +1,60 @@
+<!--pages/callHelper/callHelper.wxml-->
+<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-100rpx;"></image>
+
+  <view id="btn1" style="margin: -320rpx 40rpx 30rpx 40rpx; width:666rpx;height:500rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;padding:150rpx 0rpx 150rpx 0rpx;display:flex;flex-direction:column;justify-content:space-between;" >
+    <view style="height:120rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 20rpx;">
+      <!-- info -->
+      <view style="width:280rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 0rpx 20rpx 100rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">发现时间</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+      </view>
+      <!-- data -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 40rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">{{findtime}}</text>
+        </view>        
+      </view>
+    </view>
+    <view style="height:120rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 20rpx;">
+      <!-- info -->
+      <view style="width:280rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 0rpx 20rpx 100rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">发现地点</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+      </view>
+      <!-- data -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 40rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">{{findAddress}}</text>
+        </view>        
+      </view>
+    </view>
+    <view style="height:120rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 20rpx;">
+      <!-- info -->
+      <view style="width:280rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 0rpx 20rpx 100rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">队员联系方式</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+      </view>
+      <!-- data -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:40rpx 40rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">{{helperPhone}}</text>
+        </view>        
+      </view>   
+    </view>
+    <view style="height:120rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 20rpx;">
+      <button style="width:540rpx;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;display:flex;flex-direction:column;justify-content:center;">
+        <text style="font-size:30rpx;color:white;" bindtap="CallHelper">与队员联系</text>
+      </button>
+    </view>
+  </view>
+
+

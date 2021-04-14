@@ -1,0 +1,252 @@
+<!--pages/surrHelp/surrHelp.wxml-->
+
+  <view id="btn1" style="margin: 40rpx 40rpx 30rpx 40rpx; width:666rpx;height:1400rpx;border-radius: 10rpx;position:absolute;z-index:999;background:white;padding:20rpx 0rpx 20rpx 0rpx;display:flex;flex-direction:column;justify-content:space-between;" >
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+    <view style="height:160rpx;display:flex;flex-direction:row;justify-content:space-between;padding:0rpx 20rpx 0rpx 0rpx;border-radius: 10rpx;border-style:solid;border-width:3rpx;border-color:#3B9DEC;">
+      <!-- time -->
+      <view style="width:180rpx;display:flex;flex-direction:column;justify-content:space-between;padding:50rpx 0rpx 20rpx 0rpx;border-radius: 10rpx;background-color:#3B9DEC;">
+        <view style="height:60rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:40rpx;color:white;">{{oldName}}</text>
+        </view>
+      </view>
+      <!-- info -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;color:#000000;">失踪天数: {{loseDays}} 天</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">{{createTime}}</text>
+        </view>
+      </view>
+      <!-- 状态 -->
+      <view style="width:200rpx;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;">
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;text-align:center;">
+          <text style="font-size:28rpx;color:#3B9DEC;">{{isfinded}}</text>
+        </view>
+        <view style="height:20rpx;">
+        </view>
+        <view style="height:30rpx;display:flex;flex-direction:column;justify-content:center;">
+          <text style="font-size:28rpx;">提交人: {{createdPerson}}</text>
+        </view>        
+      </view>
+    </view>
+  </view>
