@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/findOld/findOld",
+    "pages/addInfo/addInfo",
     "pages/applying/applying",
     "pages/apply_result2/apply_result2",
     "pages/apply_result/apply_result",
