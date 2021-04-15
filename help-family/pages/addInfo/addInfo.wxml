@@ -73,4 +73,6 @@
     </view>
   </view>
 
+  <button style="margin-top:850rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none" bindtap="apply_result" bindtap="uploadInfo">提交</button>
+
 

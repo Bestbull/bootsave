@@ -47,11 +47,11 @@
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
   </view>
 
-  <view id="btn1" style="margin: 500rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+  <view id="btn1" style="margin: 500rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" bindtap="apply2">
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">更多详细信息</text>
       <text style="width:300rpx; margin-left:100rpx;">选填 ></text>
     </view>
   </view>
 
-  <button style="margin-top:600rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none">提交</button>
+  <button style="margin-top:600rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none" bindtap="apply_result">提交</button>

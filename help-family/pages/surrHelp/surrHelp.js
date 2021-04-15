@@ -11,7 +11,11 @@ Page({
     isfinded:"未找到",
     createdPerson:"王小山",
   },
-
+  applying:function(){
+    wx.navigateTo({
+      url: '/pages/applying/applying',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

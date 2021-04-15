@@ -17,6 +17,16 @@ Page({
       url: '/pages/apply/apply',
     })
   },
+  applying:function(){
+    wx.navigateTo({
+      url: '/pages/helping/helping',
+    })
+  },
+  surrHelp:function(){
+    wx.navigateTo({
+      url: '/pages/surrHelp/surrHelp',
+    })
+  },
   // 事件处理函数
   bindViewTap() {
     wx.navigateTo({

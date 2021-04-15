@@ -7,7 +7,19 @@ Page({
   data: {
 
   },
+  uploadInfo:function(){
 
+    wx.showToast({
+      title: '提交成功',
+      confirmText:'提交成功',
+      duration:1500
+    })
+    setTimeout(function(){
+      wx.navigateBack()
+    },1500)
+    
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

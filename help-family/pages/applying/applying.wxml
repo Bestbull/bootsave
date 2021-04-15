@@ -32,7 +32,7 @@
   </view>
 
 
-  <view id="btn1" style="margin: 100rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+  <view id="btn1" style="margin: 100rpx 40rpx 30rpx 40rpx; width:666rpx;height:80rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" bindtap="helpMap">
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">地图展示</text>
       <image src="../../img/help_family_applying1.png" mode="center" style=" margin-left:70rpx;height:50rpx;width:50rpx;"></image>
@@ -211,7 +211,7 @@
     </view>
   </view>
 
-  <view style="text-align:center;margin-top:770rpx;">
+  <view style="text-align:center;margin-top:770rpx;" bindtap="quitHelp">
       <button style="width:540rpx;height:60rpx;background-color:#EE2A2A;border-radius: 10rpx;display:flex;flex-direction:column;justify-content:center;">
         <text style="font-size:30rpx;color:white;">取消救援</text>
       </button>

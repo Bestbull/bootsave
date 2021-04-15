@@ -13,7 +13,42 @@ Page({
     unfindingColor:"#3B9DEC",
     message:"发现一位疑似",
   },
-
+  helpMap:function(){
+    wx.navigateTo({
+      url: '/pages/helpMap/helpMap',
+    })
+  },
+  quitHelp:function(){
+    wx.showModal({
+      title:"确定放弃救援吗?",
+      content:"放弃救援可能失去挽救生命的最后机会",
+      confirmColor:'#EE2A2A',
+      confirmText:'确认放弃',
+      cancelText:'取消',
+      success:function(res){
+        if(res.confirm){
+          // 唤起拨号
+          wx.showToast({
+            title: '你放弃了救援',
+            confirmText:'你放弃了救援',
+            duration:1500
+          })
+          setTimeout(function(){
+            wx.navigateTo({
+              url: '/pages/index/index',
+            })
+          },1500)
+          
+        }else if(res.cancel){
+          wx.showToast({
+            title: '救援仍将继续',
+            icon:'success',
+            duration:1500
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -7,7 +7,16 @@ Page({
   data: {
 
   },
-
+  addInfo:function(){
+    wx.navigateTo({
+      url: '/pages/addInfo/addInfo',
+    })
+  },
+  applying:function(){
+    wx.navigateTo({
+      url: '/pages/applying/applying',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

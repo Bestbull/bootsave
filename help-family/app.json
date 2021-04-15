@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/helpMap/helpMap",
     "pages/helping/helping",
     "pages/surrHelp/surrHelp",
@@ -11,7 +12,6 @@
     "pages/apply_result2/apply_result2",
     "pages/apply_result/apply_result",
     "pages/apply2/apply2",
-    "pages/index/index",
     "pages/apply/apply",
     "pages/logs/logs"
   ],

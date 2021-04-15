@@ -7,7 +7,17 @@ Page({
   data: {
 
   },
-
+ apply2:function(){
+   wx.navigateTo({
+     url: '/pages/apply2/apply2',
+   })
+ },
+ apply_result:function(){
+  wx.navigateTo({
+//随机
+    url: Math.floor(Math.random()*50 + 50)%2==1?'/pages/apply_result/apply_result':'/pages/apply_result2/apply_result2',
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
