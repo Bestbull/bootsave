@@ -97,7 +97,7 @@ Page({
           if(res.confirm){
             // 唤起拨号
             wx.navigateTo({
-              url: '/pages/callHelper/callHelper',
+              url: '/pages/findOld/findOld',
             })
           }
         }
