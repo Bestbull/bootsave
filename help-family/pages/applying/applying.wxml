@@ -3,31 +3,31 @@
   <view id="btn1" style="margin: -330rpx 40rpx 30rpx 40rpx; width:666rpx;height:370rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:space-between;padding:20rpx 0rpx 20rpx 0rpx;" >
     <view style="display:flex;flex-direction:row;">
       <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">发起人:</text>
-      <input style="width:200rpx; margin-left:250rpx;" auto-focus placeholder="张四"/>
+      <input style="width:200rpx; margin-left:250rpx;" placeholder="张四"/>
     </view>
     <view style="display:flex;flex-direction:row;margin-top:0rpx;">
       <text style="width:370rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">创建时间:</text>
-      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="2020-04-13 09:00"/>
+      <input style="width:300rpx; margin-left:0rpx;" placeholder="2020-04-13 09:00"/>
     </view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪老人:</text>
-      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="张三三"/>
+      <input style="width:300rpx; margin-left:80rpx;" placeholder="张三三"/>
     </view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪天数:</text>
-      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="1天"/>
+      <input style="width:300rpx; margin-left:80rpx;" placeholder="1天"/>
     </view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:370rpx;height:70rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪时间:</text>
-      <input style="width:300rpx; margin-left:0px;" auto-focus placeholder="2020-04-13 09:00"/>
+      <input style="width:300rpx; margin-left:0px;" placeholder="2020-04-13 09:00"/>
     </view>
     <view style="display:flex;flex-direction:row;margin-top:-20rpx;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">失踪地点:</text>
-      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="杭州市西湖区"/>
+      <input style="width:300rpx; margin-left:80rpx;" placeholder="杭州市西湖区"/>
     </view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">患病情况:</text>
-      <input style="width:300rpx; margin-left:80rpx;" auto-focus placeholder="早期"/>
+      <input style="width:300rpx; margin-left:80rpx;" placeholder="早期"/>
     </view>
   </view>
 

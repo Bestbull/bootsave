@@ -9,17 +9,17 @@
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">性别</text>
-      <input style="width:300rpx; margin-left:300rpx;" auto-focus placeholder="男/女"/>
+      <input style="width:300rpx; margin-left:300rpx;" placeholder="男/女"/>
     </view>
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:160rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">年龄</text>
-      <input style="width:300rpx; margin-left:300rpx;" auto-focus placeholder="Age"/>
+      <input style="width:300rpx; margin-left:300rpx;" placeholder="Age"/>
     </view>
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">家属联系电话</text>
-      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="PhoneNumber"/>
+      <input style="width:300rpx; margin-left:0rpx;" placeholder="PhoneNumber"/>
     </view>
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
@@ -32,35 +32,35 @@
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">走失时间</text>
-      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="输入日期"/>
+      <input style="width:300rpx; margin-left:180rpx;" placeholder="输入日期"/>
     </view>
     <!-- 分隔线 -->
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">疑似走失地点</text>
-      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="address"/>
+      <input style="width:300rpx; margin-left:0rpx;" placeholder="address"/>
     </view>
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:470rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">老人常去地点</text>
-      <input style="width:300rpx; margin-left:0rpx;" auto-focus placeholder="address"/>
+      <input style="width:300rpx; margin-left:0rpx;" placeholder="address"/>
     </view>
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
     <view style="display:flex;flex-direction:row;">
       <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">病情描述</text>
-      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="严重否?"/>
+      <input style="width:300rpx; margin-left:180rpx;" placeholder="严重否?"/>
     </view>
     <!-- 分隔线 -->
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>  
     <view style="display:flex;flex-direction:row;">
       <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">居住地址</text>
-      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="家庭地址"/>
+      <input style="width:300rpx; margin-left:180rpx;" placeholder="家庭地址"/>
     </view>
     <!-- 分隔线 -->
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>  
     <view style="display:flex;flex-direction:row;">
       <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">患病时间</text>
-      <input style="width:300rpx; margin-left:180rpx;" auto-focus placeholder="输入日期"/>
+      <input style="width:300rpx; margin-left:180rpx;" placeholder="输入日期"/>
     </view>
     <!-- 分隔线 -->
     <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
@@ -69,7 +69,15 @@
     </view>
     <view style="display:flex;flex-direction:row;">
       <!-- 多行输入框 -->
-      <textarea style="width:500rpx;height:120rpx; margin-left:100rpx;font-size:16;" auto-focus placeholder="请上传老人照片."/>
+      <!-- <textarea style="width:500rpx;height:120rpx; margin-left:100rpx;font-size:16;" auto-focus placeholder="请上传老人照片."/> -->
+      <view style="display:flex;flex-direction:row;">
+      <image src="../../img/help_family_upimage.png" mode="scaleToFill" style="width:120rpx;height:120rpx; margin-left:50rpx;font-size:16;" bindtap="upInmage"></image>
+      <!-- 图片 -->
+      <image src="{{tempFilePaths[0]}}" mode="scaleToFill" style="width:120rpx;height:120rpx; margin-left:20rpx;font-size:16;"></image>
+      <image src="{{tempFilePaths[1]}}" mode="scaleToFill" style="width:120rpx;height:120rpx; margin-left:20rpx;font-size:16;"></image>
+      <image src="{{tempFilePaths[2]}}" mode="scaleToFill" style="width:120rpx;height:120rpx; margin-left:20rpx;font-size:16;"></image>
+      <!-- <text style="width:500rpx;height:120rpx; margin-left:100rpx;font-size:16;">请上传照片</text> -->
+    </view>
     </view>
   </view>
 

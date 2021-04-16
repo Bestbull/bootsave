@@ -5,7 +5,21 @@ Page({
    * 页面的初始数据
    */
   data: {
+    tempFilePaths:"",
+  },
 
+  upInmage:function(){
+    var _this=this;
+    wx.chooseImage({
+      count: 3,
+      sourceType: 'album',
+      success(res){
+        // tempFilePath可以作为img标签的src属性显示图片
+        _this.setData({
+          tempFilePaths: res.tempFilePaths
+        })
+      }
+    })
   },
 
   /**

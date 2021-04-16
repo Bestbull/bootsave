@@ -9,13 +9,40 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    tempFilePaths:"",
   },
   // 申请救援点击跳转事件
   apply_help:function(){
     wx.navigateTo({
       url: '/pages/apply/apply',
     })
+
+    // 从本地相册选择图片或拍摄
+    // var _this=this;
+    // wx.chooseImage({
+    //   count: 1,
+    //   sourceType: 'album',
+    //   success(res){
+    //     // tempFilePath可以作为img标签的src属性显示图片
+    //     _this.setData({
+    //       tempFilePaths: res.tempFilePaths
+    //     })
+    //   }
+    // })
+
+    // 浏览图片实例
+    // wx.previewImage({
+    //   current: 'https://img1.gtimg.com/10/1048/104857/10485726_980x1200_0.jpg',
+    //   urls: [ // 所有图片的URL列表，数组格式
+    //     'https://img1.gtimg.com/10/1048/104857/10485731_980x1200_0.jpg',
+    //     'https://img1.gtimg.com/10/1048/104857/10485726_980x1200_0.jpg',
+    //     'https://img1.gtimg.com/10/1048/104857/10485729_980x1200_0.jpg'
+    //   ],
+    //   success: function(res) {
+    //     console.log(res)
+    //   }
+    // })
   },
   applying:function(){
     wx.navigateTo({

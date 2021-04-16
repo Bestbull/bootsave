@@ -7,6 +7,7 @@ Page({
   data: {
 
   },
+
   noHelp:function(){
     wx.navigateTo({
       url: '/pages/index/index',

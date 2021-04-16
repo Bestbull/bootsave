@@ -85,6 +85,24 @@ Page({
         }
       })
     },2000)
+
+    setTimeout(function(){
+      wx.showModal({
+        title:"发现老人!",
+        content:"请尽快核验寻找是否正确",
+        confirmColor:'#EE2A2A',
+        confirmText:'立即查看',
+        showCancel:false,
+        success:function(res){
+          if(res.confirm){
+            // 唤起拨号
+            wx.navigateTo({
+              url: '/pages/callHelper/callHelper',
+            })
+          }
+        }
+      })
+    },5000)
   },
 
   /**
