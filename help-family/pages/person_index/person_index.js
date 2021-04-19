@@ -159,7 +159,16 @@ Page({
       })
     },3000)
   },
-
+  myStutusNot:function(){
+    wx.navigateTo({
+      url: '/pages/person_myStautsNot/person_myStautsNot',
+    })
+  },
+  helpInfo:function(){
+    wx.navigateTo({
+      url: '/pages/person_helpInfo/person_helpInfo',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

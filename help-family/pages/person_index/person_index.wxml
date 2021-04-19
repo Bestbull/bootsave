@@ -58,7 +58,7 @@
       </view>
 
       <view id="btn1" style="width:90%;background:white;border-radius: 40rpx;display:flex;flex-direction:row;justify-content:space-evenly;padding:20rpx 20rpx 60rpx 35rpx;" >
-        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">状态不佳</button>
+        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="myStutusNot">状态不佳</button>
         <button style="width:35%;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="help_togo">准备出动</button>
       </view>
   </view>
@@ -146,8 +146,8 @@
         </view>
 
       <view id="btn1" style="width:90%;background:white;border-radius: 40rpx;display:flex;flex-direction:row;justify-content:space-evenly;padding:20rpx 20rpx 60rpx 35rpx;" >
-        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">状态不佳</button>
-        <button style="width:35%;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">准备出动</button>
+        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="myStutusNot">状态不佳</button>
+        <button style="width:35%;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="helpInfo">准备出动</button>
       </view>
   </view>
   </view>

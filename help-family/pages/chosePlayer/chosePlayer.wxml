@@ -1,0 +1,14 @@
+<!--pages/chosePlayer/chosePlayer.wxml-->
+<view style="width: 100%;height: 1200rpx;z-index:999;margin-top:500rpx;display:flex;flex-direction:row;justify-content:center;">
+  <view style="width:40%;text-align:center;">
+                  <button style="width:100%;height:200rpx;background-color:#0D60F2;border-radius: 200rpx;color:white;font-size:30rpx;padding-top:80rpx;"  hover-class="none" bindtap="jiashu_index">我是家属</button>
+        </view>
+        
+        <view style="width:40%;margin-left:85rpx;">
+          <button style="width:100%;height:200rpx;background-color:#0D60F2;border-radius: 200rpx;color:white;font-size:30rpx;padding-top:80rpx;"  hover-class="none" bindtap="duiyuan_index">
+            <text>我是队员</text>
+          </button>
+        </view>
+
+</view>
+

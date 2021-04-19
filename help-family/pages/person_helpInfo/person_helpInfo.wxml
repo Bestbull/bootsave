@@ -1,2 +1,84 @@
 <!--pages/person_helpInfo/person_helpInfo.wxml-->
 <!-- 行动详情 -->
+
+<page style="width:100%;height:100%;">
+
+<view style="width:100%;height:100%;">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" circles="{{circles}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: {{view.Height*0.65}}px;"
+>
+    <cover-view slot="callout">
+    <cover-view marker-id="1">
+    内容
+    </cover-view>
+    <cover-view marker-id="2"></cover-view>
+  </cover-view>
+  </map>
+<!-- ************************************************** -->
+  <view style="width: 100%;height: {{view.Height*0.35}}px;z-index:999;display:flex;flex-direction:row;justify-content:center;">
+    <view id="btn1" style="width:100%;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;background:white;display:flex;flex-direction:column;justify-content:center;" >
+      <view id="btn1" style="width:100%;height: {{view.Height*0.27}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;" >
+        <view id="btn1" style="width:85%;height: {{view.Height*0.27}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:column;justify-content:flex-start;" >
+          <view style="height: {{view.Height*0.05}}px;text-align:center;">
+            <text style="font-size:36rpx;color:#D90C0C;">请在走失地点周围展开行动</text>
+          </view>
+
+          <view id="btn1" style="width:100%;height: {{view.Height*0.22}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;" >
+            <view id="btn1" style="width:100%;height: {{view.Height*0.22}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;" >
+              <view style="width:50%;display:flex;flex-direction:column;justify-content:flex-start;">
+                <view style="display:flex;flex-direction:row;justify-content:flex-start;">
+                        <view style="height:20rpx;width:20rpx;margin-left:20rpx;margin-top:20rpx;text-align:center;border-radius:50rpx;background-color:#5BC175;">
+                        </view>
+                  <text style="margin-left:10rpx;margin-top:5rpx;">王久久</text>
+                </view>
+                <view style="display:flex;flex-direction:row;justify-content:flex-start;">
+                        <view style="height:20rpx;width:20rpx;margin-left:20rpx;margin-top:20rpx;text-align:center;border-radius:50rpx;background-color:#FF9657;">
+                        </view>
+                  <text style="margin-left:10rpx;margin-top:5rpx;">轻度患病</text>
+                </view>
+                <view style="display:flex;flex-direction:row;justify-content:flex-start;">
+                        <view style="height:20rpx;width:20rpx;margin-left:20rpx;margin-top:20rpx;text-align:center;border-radius:50rpx;background-color:#5BC175;">
+                        </view>
+                  <text style="margin-left:10rpx;margin-top:5rpx;">一米六,穿蓝色外套</text>
+                </view>
+                <view style="display:flex;flex-direction:row;justify-content:flex-start;margin-top:30rpx;">
+                        <view style="height:30rpx;width:30rpx;margin-left:20rpx;margin-top:10rpx;text-align:center;">
+                          <image src="../../img/help_family_applying2.png" mode="aspectFit" style="width:100%;height:100%;"></image>
+                        </view>
+                  <text style="font-size:24rpx;margin-left:10rpx;margin-top:10rpx;">2020-4-30 14:45:20</text>
+                </view>
+              </view>
+              <view style="width:50%;">
+                <image src="../../img/examplePhoto.jpg" mode="aspectFit" style="width:90%;height:90%;"></image>
+              </view>
+            </view>
+
+          </view>
+          
+        </view>
+        <view style="width:15%;height: {{view.Height*0.27}}px;">
+          <image src="../../img/help_family_per_helpInfo.png" mode="aspectFit" style="width:100%;height:100%;"></image>
+        </view>
+
+      </view>
+
+
+      <view id="btn1" style="width:100%;height: {{view.Height*0.08}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;padding:0rpx 30rpx 0rpx 30rpx;" >
+        <view style="width:40%;text-align:center;">
+                  <button style="width:100%;height:90%;background-color:#0D60F2;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="isOldApi">人脸识别</button>
+        </view>
+        
+        <view style="width:40%;margin-left:85rpx;">
+          <button style="width:100%;height:90%;background-color:#0D60F2;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="oldmanInfo">老人详细信息</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+</page>
+
+
