@@ -17,7 +17,6 @@ Page({
     wx.getSystemInfo({//获取用户设备信息
       type: 'wgs84',
       success: function (res) {
-        //设置map高度，根据当前设备宽高满屏显示
         _this.setData({
           view: {
             Height: res.windowHeight

@@ -21,5 +21,137 @@
  <!-- <canvas canvas-id="myCanvas" class="myCanvas" >
   <canvas canvas-id="myCanvas_2" class="myCanvas_2" ></canvas>
  </canvas> -->
+
 </view>
- 
+
+<!-- 申请救援提示 -->
+<!-- position:absolute;绝对定位 -->
+<view style="position:absolute;z-index:999;top:300rpx;left:8rpx;width: 98%;display:flex;flex-direction:row;justify-content:center;display:{{is_display}};">
+    <view id="btn1" style="width:100%;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 40rpx;background:white;display:flex;flex-direction:column;justify-content:center;" >
+      <view style="text-align:center;margin-top:40rpx;margin-bottom:20rpx;">
+        <text style="font-size:40rpx;">申请救援</text>
+      </view>
+
+      <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;" >
+        <view>
+          <image src="../../img/examplePhoto.jpg" mode="aspectFit" style="width:250rpx;height:250rpx;margin: 20rpx 60rpx 35rpx 60rpx;"></image>
+        </view>
+
+        <view id="btn1" style="margin-left:40rpx;margin-top:0rpx;border-radius: 40rpx;background:white;display:flex;flex-direction:column;justify-content:space-evenly;" >
+          <view>
+            <text>姓名</text>
+          </view>
+          <view>
+            <text>性别</text>
+          </view>
+          <view>
+            <text>年龄</text>
+          </view>
+          <view>
+            <text>特征描述</text>
+          </view>
+          <view>
+            <text>走失地点</text>
+          </view>
+        </view>
+
+      </view>
+
+      <view id="btn1" style="width:90%;background:white;border-radius: 40rpx;display:flex;flex-direction:row;justify-content:space-evenly;padding:20rpx 20rpx 60rpx 35rpx;" >
+        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">状态不佳</button>
+        <button style="width:35%;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="help_togo">准备出动</button>
+      </view>
+  </view>
+  </view>
+
+
+
+  
+<!-- 反馈状态 -->
+<!-- position:absolute;绝对定位 -->
+<view style="position:absolute;z-index:999;top:100rpx;left:8rpx;width: 98%;display:flex;flex-direction:row;justify-content:center;display:{{is_display_up}};">
+    <view id="btn1" style="width:100%;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 40rpx;background:white;display:flex;flex-direction:column;justify-content:center;" >
+      <view style="text-align:center;margin-top:40rpx;margin-bottom:20rpx;">
+        <text style="font-size:40rpx;">反馈状态信息</text>
+      </view>
+
+      <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;margin-bottom:30rpx;" >
+        <view>
+          <image src="../../img/examplePhoto.jpg" mode="aspectFit" style="width:250rpx;height:250rpx;margin: 20rpx 60rpx 35rpx 60rpx;"></image>
+        </view>
+        <view>
+          <image src="../../img/examplePhoto.jpg" mode="aspectFit" style="width:250rpx;height:250rpx;margin: 20rpx 60rpx 35rpx 60rpx;"></image>
+        </view>
+
+      </view>
+
+      <view id="btn1" style="margin-left:40rpx;margin-top:0rpx;border-radius: 40rpx;background:white;display:flex;flex-direction:column;justify-content:space-evenly;" >
+        <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;margin-bottom:30rpx;" >
+          <view >
+            <text>身体状况</text>
+          </view>
+          <view class="section__title" style="margin-left:400rpx;"></view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                {{array[index]}}
+              </view>
+            </picker>
+          <view>
+            <image src="../../img/help_family_per_ind1.png" style="width:50rpx;height:50rpx;" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;margin-bottom:30rpx;" >
+          <view >
+            <text>装备是否齐全</text>
+          </view>
+          <view class="section__title" style="margin-left:335rpx;"></view>
+            <picker bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+              <view class="picker">
+                {{array2[index2]}}
+              </view>
+            </picker>
+          <view>
+            <image src="../../img/help_family_per_ind1.png" style="width:50rpx;height:50rpx;" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;margin-bottom:30rpx;" >
+          <view >
+            <text>交通是否方便</text>
+          </view>
+          <view class="section__title" style="margin-left:335rpx;"></view>
+            <picker bindchange="bindPickerChange3" value="{{index3}}" range="{{array3}}">
+              <view class="picker">
+                {{array3[index3]}}
+              </view>
+            </picker>
+          <view>
+            <image src="../../img/help_family_per_ind1.png" style="width:50rpx;height:50rpx;" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view id="btn1" style="border-radius: 40rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;margin-bottom:30rpx;" >
+          <view >
+            <text>行动工具</text>
+          </view>
+          <view class="section__title" style="margin-left:400rpx;"></view>
+            <picker bindchange="bindPickerChange4" value="{{index4}}" range="{{array4}}">
+              <view class="picker">
+                {{array4[index4]}}
+              </view>
+            </picker>
+          <view>
+            <image src="../../img/help_family_per_ind1.png" style="width:50rpx;height:50rpx;" mode="aspectFit"></image>
+          </view>
+        </view>
+
+        </view>
+
+      <view id="btn1" style="width:90%;background:white;border-radius: 40rpx;display:flex;flex-direction:row;justify-content:space-evenly;padding:20rpx 20rpx 60rpx 35rpx;" >
+        <button style="width:35%;height:80rpx;background-color:#E64340;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">状态不佳</button>
+        <button style="width:35%;height:80rpx;background-color:#35AD1A;border-radius: 10rpx;color:white;font-size:30rpx;"  hover-class="none" bindtap="apply_result">准备出动</button>
+      </view>
+  </view>
+  </view>
+
+
+
+
