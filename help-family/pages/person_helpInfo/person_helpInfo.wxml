@@ -14,7 +14,7 @@
   </cover-view>
   </map>
 <!-- ************************************************** -->
-  <view style="width: 100%;height: {{view.Height*0.35}}px;z-index:999;display:flex;flex-direction:row;justify-content:center;">
+  <view style="width: 100%;height: {{view.Height*0.35}}px;z-index:99;display:flex;flex-direction:row;justify-content:center;">
     <view id="btn1" style="width:100%;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;background:white;display:flex;flex-direction:column;justify-content:center;" >
       <view id="btn1" style="width:100%;height: {{view.Height*0.27}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:row;justify-content:flex-start;" >
         <view id="btn1" style="width:85%;height: {{view.Height*0.27}}px;border-radius: 10rpx;background:white;display:flex;flex-direction:column;justify-content:flex-start;" >
@@ -74,9 +74,13 @@
     </view>
   </view>
 
+
+
 </view>
 
-
+<!-- <view style="position:absolute;z-index:999;top:1000rpx;left:250rpx;width: 200rpx;display:flex;flex-direction:row;justify-content:center;display:block;">
+  <view id="btn1" style="width:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 40rpx;background:white;display:flex;flex-direction:column;justify-content:center;background-color:red;" ></view>
+</view> -->
 
 
 </page>

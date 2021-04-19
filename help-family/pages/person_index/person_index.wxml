@@ -12,7 +12,7 @@
 </view>
 <view class="line"></view>
 <view class="button">
-  <button style="margin-left:50rpx;" class="btn" type="primary" size="mini" bindtap=''>历史行动</button>
+  <button style="margin-left:50rpx;" class="btn" type="primary" size="mini" bindtap='helped'>历史行动</button>
 </view>
 <view style="text-align:center;">
   <image class="img_2"  src="../../img/3.png" mode="aspectFit"></image>

@@ -110,9 +110,15 @@ Page({
   help_togo:function(){
     var that = this;
     that.setData({
-      is_display:'node',
+      is_display:'none',
       is_display_up:'block'
     })
+
+    setTimeout(function(){
+      that.setData({
+        is_display_up:'none'
+      })
+    },5000)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -155,6 +161,12 @@ Page({
           that.setData({
             is_display:'block'
           })
+
+          setTimeout(function(){
+            that.setData({
+              is_display:'none'
+            })
+          },5000)
         },
       })
     },3000)
@@ -167,6 +179,11 @@ Page({
   helpInfo:function(){
     wx.navigateTo({
       url: '/pages/person_helpInfo/person_helpInfo',
+    })
+  },
+  helped:function(){
+    wx.navigateTo({
+      url: '/pages/person_helped/person_helped',
     })
   },
   /**

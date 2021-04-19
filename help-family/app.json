@@ -1,13 +1,14 @@
 {
   "pages":[
     
+    
     "pages/chosePlayer/chosePlayer",
 
     "pages/person_index/person_index",
     
-    
-    
     "pages/person_helpInfo/person_helpInfo",
+    
+    
     
     
     "pages/person_oldmanInfo/person_oldmanInfo",
