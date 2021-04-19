@@ -1,0 +1,25 @@
+<!--pages/person_index/person_index.wxml-->
+<!--index.wxml-->
+<view class="container">
+  <p>{{weather.city.data}}   {{weather.weather.data}}   {{weather.temperature.data}} ℃</p>
+</view>
+<view>
+<swiper id="swiper">
+ <swiper-item wx:for="{{imgUrls}}">
+  <image src='{{item}}' width="335" height="350" mode='widthFix' class='img' />
+ </swiper-item>
+</swiper>
+</view>
+<view class="line"></view>
+<view class="button">
+  <button style="margin-left:50rpx;" class="btn" type="primary" size="mini" bindtap=''>历史行动</button>
+</view>
+<view style="text-align:center;">
+  <image class="img_2"  src="../../img/3.png" mode="aspectFit"></image>
+</view>
+<view class="bottom">
+ <!-- <canvas canvas-id="myCanvas" class="myCanvas" >
+  <canvas canvas-id="myCanvas_2" class="myCanvas_2" ></canvas>
+ </canvas> -->
+</view>
+ 

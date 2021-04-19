@@ -1,5 +1,16 @@
 {
   "pages":[
+    
+    
+    "pages/person_helped/person_helped",
+    "pages/person_helpInfo/person_helpInfo",
+    "pages/person_applyToHelp/person_applyToHelp",
+    "pages/person_upMyInfo/person_upMyInfo",
+    "pages/person_isOldApi/person_isOldApi",
+    "pages/person_index/person_index",
+    "pages/person_oldmanInfo/person_oldmanInfo",
+    "pages/person_myStautsNot/person_myStautsNot",
+
     "pages/index/index",
     "pages/helpMap/helpMap",
     "pages/helping/helping",

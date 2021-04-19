@@ -1,0 +1,10 @@
+<!--pages/person_isOldApi/person_isOldApi.wxml-->
+<!-- 人脸识别 -->
+<camera device-position="{{show}}" flash="off" binderror="error" style="width: 100%; height: 400px;"></camera>
+<!--调试前后摄像头  -->
+ <view class='weui-cell__ft'>
+            <switch checked bindchange='switch1Change'></switch>
+  </view>
+ <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" bindtap="detectface">拍照                   </button>
+ </view>

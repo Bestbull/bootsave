@@ -1,0 +1,88 @@
+/* pages/person_isOldApi/person_isOldApi.wxss */
+.identification {
+  width: 480rpx;
+  height: 480rpx;
+  margin-top: 10%;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.identification .camera {
+  width: 430rpx;
+  height: 430rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.identification .camera .zz {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.identification .camera camera {
+  width: 100%;
+  height: 100%;
+}
+
+.message {
+  text-align: center;
+  margin-top: 60rpx;
+}
+
+.message text {
+  font: 24rpx/50rpx "";
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.message view {
+  font: 46rpx/50rpx "";
+  color: #4877D1;
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.message view.msgTitle {
+  font: 32rpx/50rpx "";
+  color: #333;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.message view.msgContent {
+  font: 24rpx/50rpx "";
+  color: #999;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.message image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.message .nextBtn {
+  width: 400rpx;
+  margin: 40rpx auto 0;
+  background: #4877D1;
+  color: #fff;
+  font: 32rpx/80rpx "";
+  border-radius: 50rpx;
+}
+
+.crl-dot {
+  width: 10rpx;
+  height: 10rpx;
+  background: red;
+  position: absolute;
+  top: -10rpx;
+  left: -10rpx;
+}

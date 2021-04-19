@@ -1,0 +1,86 @@
+<!--pages/person_myStautsNot/person_myStautsNot.wxml-->
+<!-- 状态不佳 -->
+<!--需要修改checkbox样式-->
+<image src="https://cdn.jsdelivr.net/gh/wzc520pyfm/Picbed_PicGo@master/img/help_family_apply1.png" mode="center" style="width:100%;margin-top:-58rpx;"></image>
+  <view id="btn1" style="margin: -330rpx 40rpx 30rpx 40rpx; width:666rpx;height:570rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;padding-top:30rpx;display:flex;flex-direction:column;justify-content:flex-start;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:200rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">不便出行</text>
+      <view style="width:300rpx; margin-left:260rpx;">
+      <checkbox-group class="group" bindchange="checkboxChange"style="margin-left:80rpx;">
+        <view class="label-1">
+          <label>
+            <!-- checked是是否选中, true和false-->
+            <checkbox value="{{checkboxItems[0].name}}" checked="{{checkboxItems[0].checked}}"></checkbox>
+            <!-- value是显示的文字,此处设空,不需要它 -->
+            <text class="label-1-text">{{checkboxItems[0].value}}</text>
+          </label>
+        </view>
+      </checkbox-group>
+    </view>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:200rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">身体不适</text>
+      <view style="width:300rpx; margin-left:260rpx;">
+      <checkbox-group class="group" bindchange="checkboxChange"style="margin-left:80rpx;">
+        <view class="label-1">
+          <label>
+            <!-- checked是是否选中, true和false-->
+            <checkbox value="{{checkboxItems[1].name}}" checked="{{checkboxItems[1].checked}}"></checkbox>
+            <!-- value是显示的文字,此处设空,不需要它 -->
+            <text class="label-1-text">{{checkboxItems[1].value}}</text>
+          </label>
+        </view>
+      </checkbox-group>
+    </view>
+    </view>
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:200rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;">事务缠身</text>
+      <view style="width:300rpx; margin-left:260rpx;">
+      <checkbox-group class="group" bindchange="checkboxChange"style="margin-left:80rpx;">
+        <view class="label-1">
+          <label>
+            <!-- checked是是否选中, true和false-->
+            <checkbox value="{{checkboxItems[2].name}}" checked="{{checkboxItems[2].checked}}"></checkbox>
+            <!-- value是显示的文字,此处设空,不需要它 -->
+            <text class="label-1-text">{{checkboxItems[2].value}}</text>
+          </label>
+        </view>
+      </checkbox-group>
+    </view>
+    </view>
+
+  </view>
+
+
+  <view id="btn1" style="margin: 310rpx 40rpx 30rpx 40rpx; width:666rpx;height:200rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;position:absolute;z-index:999;background:white;display:flex;flex-direction:column;justify-content:center;" >
+    <view style="display:flex;flex-direction:row;">
+      <text style="width:250rpx;color:balck;text-shadow:5rpx 1rpx 6rpx rgb(0,0,0,0.5);margin-left:50rpx;margin-top:20rpx;">描述</text>
+    </view>
+    <!-- 分隔线 -->
+    <view style="width:80%;height:2rpx;margin:2% auto;background:#aaa;"></view>
+    <textarea style="width:500rpx;height:120rpx; margin-left:100rpx;margin-top:10rpx;font-size:16;" placeholder="请输入无法行动的具体原因."/>
+  </view>
+
+  <button style="margin-top:600rpx;width:640rpx;height:80rpx;background-color:#3B9DEC;border-radius: 10rpx;color:white;"  hover-class="none" bindtap="apply_result">提交</button>
+
+
+  
+
+
+  <!-- 保留for循环写法,以备下次使用 -->
+<!-- <view style="width:300rpx; margin-left:260rpx;">
+      <checkbox-group class="group" bindchange="checkboxChange">
+        用到了循环
+        <view class="label-1" wx:for="{{checkboxItems}}">
+          <label>
+            checked是是否选中, true和false
+            <checkbox value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+            value是显示的文字,此处设空,不需要它
+            <text class="label-1-text">{{item.value}}</text>
+          </label>
+        </view>
+      </checkbox-group>
+    </view> -->
