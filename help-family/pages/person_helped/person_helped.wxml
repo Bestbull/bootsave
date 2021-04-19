@@ -3,7 +3,7 @@
 
 <view style="width: 100%; height: {{view.Height}}px;display:flex;flex-direction:column;justify-content:flex-start;padding-top:30rpx;">
   <view style="margin:10rpx 0rpx 20rpx 30rpx;">
-    <text style="color:#101010;font-size:28rpx;">历史订单</text>
+    <text style="color:#101010;font-size:30rpx;">历史订单</text>
   </view>
   <view style="width: 100%;margin-bottom:20rpx;display:flex;flex-direction:row;justify-content:center;">
     <view id="btn1" style=" width:666rpx;box-shadow: 0rpx 2rpx 6rpx 5rpx rgb(0,0,0,0.4);border-radius: 10rpx;background:white;display:flex;flex-direction:column;justify-content:center;" >
